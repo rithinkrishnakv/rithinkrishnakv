@@ -14,13 +14,6 @@
   </a>
 </p>
 
-<h3 align="left">Featured Project:</h3>
-<p align="left">
-  <b>🚩 SkyTower: The Full Root-Chain Walkthrough</b><br>
-  A deep dive into manual WAF evasion, SQLi bypass, and Proxy pivoting. <br>
-  <a href="https://medium.com/@rithinkrishnakv/skytower-the-full-root-chain-walkthrough-4f2fd526a1c8">Read the Full Report on Medium</a>
-</p>
-
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
