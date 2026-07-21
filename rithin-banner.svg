@@ -119,7 +119,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
 <g opacity="0" style="animation:fadeIn .7s ease 3.3s forwards">
 <text x="56" y="244" font-size="13" fill="#5b6b84">📍 Kerala, IN</text>
-<text x="168" y="244" font-size="13" fill="#3d5872">status: 💀 idk what am doing</text>
+<text x="168" y="244" font-size="13" fill="#3d5872">status:  idk what am doing</text>
 </g>
 
 <!-- right-side network graph motif -->
