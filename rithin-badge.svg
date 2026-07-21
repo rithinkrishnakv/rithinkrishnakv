@@ -1,856 +1,197 @@
-<?xml version="1.0" encoding="UTF-8"?>
+from pathlib import Path
+import base64, html
+
+img_path = Path("/mnt/data/ChatGPT Image Oct 8, 2025, 09_53_58 AM(1).jpg")
+img_b64 = base64.b64encode(img_path.read_bytes()).decode("ascii")
+
+svg = f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 400 720"
+     viewBox="0 0 400 680"
      width="400"
-     height="720"
+     height="680"
      role="img"
      aria-label="Rithin Krishna (Rimu) access badge">
 
 <defs>
-
-<style type="text/css"><![CDATA[
-
-text {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace
-}
-
-@keyframes settle {
-  0% { transform: rotate(0deg) translateY(-740px) }
-  18% { transform: rotate(0deg) translateY(0) }
-  30% { transform: rotate(-11deg) }
-  46% { transform: rotate(8deg) }
-  62% { transform: rotate(-5deg) }
-  78% { transform: rotate(3deg) }
-  92% { transform: rotate(-1.2deg) }
-  100% { transform: rotate(0) }
-}
-
-@keyframes sway {
-  0%,100% { transform: rotate(-2.6deg) }
-  50% { transform: rotate(2.6deg) }
-}
-
-@keyframes cardWobble {
-  0%,100% { transform: rotate(1.3deg) }
-  50% { transform: rotate(-1.3deg) }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-
-@keyframes breathe {
-  0%,100% { opacity: .82 }
-  50% { opacity: 1 }
-}
-
-@keyframes drift {
-  0% { transform: translateY(0); opacity: 0 }
-  15% { opacity: .85 }
-  85% { opacity: .85 }
-  100% { transform: translateY(-30px); opacity: 0 }
-}
-
-@keyframes ledBlink {
-  0%,100% { opacity: 1 }
-  50% { opacity: .25 }
-}
-
-@keyframes shieldPulse {
-  0%,100% { opacity: .7 }
-  50% { opacity: 1 }
-}
-
-.settle {
-  transform-origin: 200px 6px;
-  animation: settle 3.4s cubic-bezier(.34,1.1,.5,1) forwards
-}
-
-.sway {
-  transform-origin: 200px 6px;
-  animation: sway 4.4s ease-in-out 3.4s infinite
-}
-
-.wob {
-  transform-origin: 200px 320px;
-  animation: cardWobble 4.4s ease-in-out 3.4s infinite
-}
-
-.granted {
-  animation: breathe 2.6s ease-in-out 5.3s infinite
-}
-
-.p {
-  animation: drift linear infinite
-}
-
-.led {
-  animation: ledBlink 1.6s ease-in-out 5.2s infinite
-}
-
+<style><![CDATA[
+text{{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}}
+@keyframes settle{{0%{{transform:rotate(0deg) translateY(-700px)}}18%{{transform:rotate(0deg) translateY(0)}}30%{{transform:rotate(-11deg)}}46%{{transform:rotate(8deg)}}62%{{transform:rotate(-5deg)}}78%{{transform:rotate(3deg)}}92%{{transform:rotate(-1.2deg)}}100%{{transform:rotate(0deg)}}}}
+@keyframes sway{{0%,100%{{transform:rotate(-2.6deg)}}50%{{transform:rotate(2.6deg)}}}}
+@keyframes cardWobble{{0%,100%{{transform:rotate(1.3deg)}}50%{{transform:rotate(-1.3deg)}}}}
+@keyframes fadeIn{{from{{opacity:0}}to{{opacity:1}}}}
+@keyframes breathe{{0%,100%{{opacity:.82}}50%{{opacity:1}}}}
+@keyframes drift{{0%{{transform:translateY(0);opacity:0}}15%{{opacity:.85}}85%{{opacity:.85}}100%{{transform:translateY(-30px);opacity:0}}}}
+@keyframes ledBlink{{0%,100%{{opacity:1}}50%{{opacity:.25}}}}
+.settle{{transform-origin:200px 6px;animation:settle 3.4s cubic-bezier(.34,1.1,.5,1) forwards}}
+.sway{{transform-origin:200px 6px;animation:sway 4.4s ease-in-out 3.4s infinite}}
+.wob{{transform-origin:200px 300px;animation:cardWobble 4.4s ease-in-out 3.4s infinite}}
+.granted{{animation:breathe 2.6s ease-in-out 5.3s infinite}}
+.p{{animation:drift linear infinite}}
+.led{{animation:ledBlink 1.6s ease-in-out 5.2s infinite}}
 ]]></style>
 
-<!-- Lanyard gradient -->
 <linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%" stop-color="#0ea5e9"/>
-  <stop offset="40%" stop-color="#a855f7"/>
-  <stop offset="60%" stop-color="#a855f7"/>
-  <stop offset="100%" stop-color="#0ea5e9"/>
+<stop offset="0%" stop-color="#0ea5e9"/>
+<stop offset="50%" stop-color="#a855f7"/>
+<stop offset="100%" stop-color="#0ea5e9"/>
 </linearGradient>
 
-<!-- Card background -->
-<linearGradient id="cardGrad" x1="0" y1="0" x2=".3" y2="1">
-  <stop offset="0%" stop-color="#0d1525"/>
-  <stop offset="50%" stop-color="#0a1220"/>
-  <stop offset="100%" stop-color="#060a12"/>
+<linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#101d2c"/>
+<stop offset="100%" stop-color="#080d15"/>
 </linearGradient>
 
-<!-- Animated card border -->
 <linearGradient id="cardBorder" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0%" stop-color="#00d9ff">
-    <animate attributeName="stop-color"
-             values="#00d9ff;#a855f7;#0ea5e9;#00d9ff"
-             dur="10s"
-             repeatCount="indefinite"/>
-  </stop>
-
-  <stop offset="50%" stop-color="#a855f7">
-    <animate attributeName="stop-color"
-             values="#a855f7;#0ea5e9;#38bdf8;#a855f7"
-             dur="10s"
-             repeatCount="indefinite"/>
-  </stop>
-
-  <stop offset="100%" stop-color="#0ea5e9">
-    <animate attributeName="stop-color"
-             values="#0ea5e9;#38bdf8;#00d9ff;#0ea5e9"
-             dur="10s"
-             repeatCount="indefinite"/>
-  </stop>
+<stop offset="0%" stop-color="#00d9ff"/>
+<stop offset="50%" stop-color="#a855f7"/>
+<stop offset="100%" stop-color="#0ea5e9"/>
 </linearGradient>
 
-<!-- Metallic clip -->
-<linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0%" stop-color="#c9d3e0"/>
-  <stop offset="45%" stop-color="#8b96a8"/>
-  <stop offset="55%" stop-color="#6a7488"/>
-  <stop offset="100%" stop-color="#a2acbd"/>
-</linearGradient>
-
-<!-- Cyan/purple text gradient -->
 <linearGradient id="nameGrad2" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%" stop-color="#00d9ff"/>
-  <stop offset="50%" stop-color="#a855f7"/>
-  <stop offset="100%" stop-color="#8fe3ff"/>
+<stop offset="0%" stop-color="#00d9ff"/>
+<stop offset="50%" stop-color="#a855f7"/>
+<stop offset="100%" stop-color="#8fe3ff"/>
 </linearGradient>
 
-<!-- Divider gradient -->
-<linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0%" stop-color="#00d9ff" stop-opacity="0"/>
-  <stop offset="30%" stop-color="#00d9ff" stop-opacity=".6"/>
-  <stop offset="70%" stop-color="#a855f7" stop-opacity=".6"/>
-  <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
-</linearGradient>
-
-<!-- Card glow -->
 <radialGradient id="cardGlow" cx="50%" cy="40%" r="60%">
-  <stop offset="0%" stop-color="#a855f7" stop-opacity=".12"/>
-  <stop offset="50%" stop-color="#0ea5e9" stop-opacity=".08"/>
-  <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+<stop offset="0%" stop-color="#a855f7" stop-opacity=".12"/>
+<stop offset="50%" stop-color="#0ea5e9" stop-opacity=".08"/>
+<stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
 </radialGradient>
 
-<!-- Header glow -->
-<radialGradient id="headerGlow" cx="50%" cy="100%" r="80%">
-  <stop offset="0%" stop-color="#00d9ff" stop-opacity=".18"/>
-  <stop offset="100%" stop-color="#00d9ff" stop-opacity="0"/>
-</radialGradient>
-
-<!-- Glow -->
 <filter id="glowB" x="-80%" y="-80%" width="260%" height="260%">
-  <feGaussianBlur stdDeviation="2.6" result="b"/>
-  <feMerge>
-    <feMergeNode in="b"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
+<feGaussianBlur stdDeviation="2.6" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
 
-<!-- Shadow -->
 <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
-  <feDropShadow dx="0"
-                dy="10"
-                stdDeviation="14"
-                flood-color="#000"
-                flood-opacity=".6"/>
+<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".6"/>
 </filter>
 
-<!-- Inner glow -->
-<filter id="softInner" x="-10%" y="-10%" width="120%" height="120%">
-  <feGaussianBlur stdDeviation="1" result="b"/>
-  <feMerge>
-    <feMergeNode in="b"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>
-
-<!-- Clips -->
 <clipPath id="photoClip">
-  <circle cx="200" cy="430" r="55"/>
+<circle cx="200" cy="412" r="58"/>
 </clipPath>
 
-<clipPath id="barBar">
-  <rect x="170"
-        y="0"
-        width="0"
-        height="9"
-        rx="4.5">
-    <animate attributeName="width"
-             from="0"
-             to="212"
-             dur="1.1s"
-             begin="3.7s"
-             fill="freeze"
-             calcMode="spline"
-             keySplines=".2 .8 .3 1"/>
-  </rect>
-</clipPath>
-
-<clipPath id="cardClip">
-  <rect x="64"
-        y="310"
-        width="272"
-        height="380"
-        rx="18"/>
-</clipPath>
-
-<!-- Shield -->
-<g id="badgeShield">
-  <path d="M0 -10 L8 -6 L8 2 C8 6 4 9 0 11 C-4 9 -8 6 -8 2 L-8 -6 Z"
-        fill="none"
-        stroke="#00d9ff"
-        stroke-width="1.4"
-        opacity=".9"/>
-
-  <path d="M-3 1 L-1 4 L3 -1"
-        fill="none"
-        stroke="#00d9ff"
-        stroke-width="1.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-</g>
-
-<!-- Lock -->
-<g id="badgeLock">
-  <rect x="-5"
-        y="-1"
-        width="10"
-        height="8"
-        rx="1.5"
-        fill="none"
-        stroke="#a855f7"
-        stroke-width="1.2"/>
-
-  <path d="M-3 -1 L-3 -3.5 C-3 -6 3 -6 3 -3.5 L3 -1"
-        fill="none"
-        stroke="#a855f7"
-        stroke-width="1.2"
-        stroke-linecap="round"/>
-
-  <circle cx="0"
-          cy="2.5"
-          r="1.2"
-          fill="#a855f7"/>
-</g>
-
-<!-- Circuit pattern -->
-<pattern id="circuitPat"
-         width="20"
-         height="20"
-         patternUnits="userSpaceOnUse">
-
-  <line x1="0"
-        y1="10"
-        x2="8"
-        y2="10"
-        stroke="#1a2a4a"
-        stroke-width=".4"
-        opacity=".3"/>
-
-  <line x1="12"
-        y1="0"
-        x2="12"
-        y2="10"
-        stroke="#1a2a4a"
-        stroke-width=".4"
-        opacity=".3"/>
-
-  <circle cx="12"
-          cy="10"
-          r="1.5"
-          fill="#1a2a4a"
-          opacity=".2"/>
+<pattern id="microHex" width="18" height="16" patternUnits="userSpaceOnUse">
+<path d="M4 1h10l4 7-4 7H4L0 8z" fill="none" stroke="#1a2a4a" stroke-width=".45" opacity=".42"/>
 </pattern>
 
 </defs>
 
-<!-- Ambient particles -->
 <g fill="#00d9ff">
-
-  <rect class="p"
-        x="44"
-        y="590"
-        width="4"
-        height="4"
-        transform="rotate(45 46 592)"
-        style="animation-duration:6s;animation-delay:.3s"/>
-
-  <rect class="p"
-        x="348"
-        y="530"
-        width="3.4"
-        height="3.4"
-        transform="rotate(45 349.7 531.7)"
-        style="animation-duration:5.4s;animation-delay:1.4s"/>
-
-  <rect class="p"
-        x="56"
-        y="460"
-        width="3"
-        height="3"
-        transform="rotate(45 57.5 461.5)"
-        style="animation-duration:6.6s;animation-delay:2.1s"/>
-
-  <rect class="p"
-        x="342"
-        y="640"
-        width="3.6"
-        height="3.6"
-        transform="rotate(45 343.8 641.8)"
-        style="animation-duration:5.8s;animation-delay:.8s"/>
-
+<rect class="p" x="44" y="590" width="4" height="4" transform="rotate(45 46 592)" style="animation-duration:6s;animation-delay:.3s"/>
+<rect class="p" x="348" y="530" width="3.4" height="3.4" transform="rotate(45 349.7 531.7)" style="animation-duration:5.4s;animation-delay:1.4s"/>
+<rect class="p" x="56" y="460" width="3" height="3" transform="rotate(45 57.5 461.5)" style="animation-duration:6.6s;animation-delay:2.1s"/>
+<rect class="p" x="342" y="640" width="3.6" height="3.6" transform="rotate(45 343.8 641.8)" style="animation-duration:5.8s;animation-delay:.8s"/>
 </g>
 
-<!-- Ambient card glow -->
-<circle cx="200"
-        cy="440"
-        r="240"
-        fill="url(#cardGlow)"/>
+<circle cx="200" cy="420" r="230" fill="url(#cardGlow)"/>
 
-<!-- LANYARD -->
 <g class="settle">
-
-  <g class="sway">
-
-    <!-- Strap -->
-    <path d="M181 -80 L219 -80 L216 248 L184 248 Z"
-          fill="url(#strapGrad)"/>
-
-    <text font-size="9.5"
-          font-weight="700"
-          fill="#eaf6ff"
-          opacity=".9"
-          letter-spacing="2.5"
-          transform="translate(214,6) rotate(90)">
-      RITHINKRISHNAKV
-    </text>
-
-    <!-- Metal clip -->
-    <rect x="178"
-          y="244"
-          width="44"
-          height="26"
-          rx="6"
-          fill="url(#metal)"
-          stroke="#4a5568"
-          stroke-width="1"/>
-
-    <rect x="189"
-          y="250"
-          width="22"
-          height="7"
-          rx="3.5"
-          fill="#333c4a"/>
-
-    <circle cx="200"
-            cy="286"
-            r="14"
-            fill="none"
-            stroke="url(#metal)"
-            stroke-width="5.5"/>
-
-    <!-- CARD -->
-    <g class="wob">
-
-      <!-- Main card -->
-      <rect x="62"
-            y="310"
-            width="276"
-            height="390"
-            rx="20"
-            fill="url(#cardGrad)"
-            stroke="url(#cardBorder)"
-            stroke-width="2"
-            filter="url(#cardShadow)"/>
-
-      <!-- Circuit overlay -->
-      <g clip-path="url(#cardClip)"
-         opacity=".5">
-
-        <rect x="62"
-              y="310"
-              width="276"
-              height="390"
-              fill="url(#circuitPat)"/>
-
-      </g>
-
-      <!-- Header -->
-      <rect x="62"
-            y="310"
-            width="276"
-            height="36"
-            rx="20"
-            fill="#0f1d30"
-            opacity=".9"/>
-
-      <rect x="62"
-            y="326"
-            width="276"
-            height="20"
-            fill="#0f1d30"
-            opacity=".9"/>
-
-      <rect x="62"
-            y="310"
-            width="276"
-            height="36"
-            rx="20"
-            fill="url(#headerGlow)"/>
-
-      <!-- Header text -->
-      <text x="78"
-            y="332"
-            font-size="8.5"
-            fill="#5b6b84"
-            letter-spacing="1.5">
-        ACCESS BADGE
-      </text>
-
-      <text x="322"
-            y="332"
-            text-anchor="end"
-            font-size="8.5"
-            fill="#a855f7"
-            letter-spacing="1">
-        OPR-096925
-      </text>
-
-      <!-- Header shield -->
-      <g transform="translate(200,326)"
-         style="animation:shieldPulse 3s ease-in-out infinite">
-
-        <use href="#badgeShield"
-             transform="scale(.9)"/>
-
-      </g>
-
-      <!-- Photo ring -->
-      <circle cx="200"
-              cy="430"
-              r="60"
-              fill="none"
-              stroke="url(#cardBorder)"
-              stroke-width="2.2"
-              filter="url(#softInner)"/>
-
-      <circle cx="200"
-              cy="430"
-              r="62"
-              fill="none"
-              stroke="#00d9ff"
-              stroke-width=".5"
-              opacity=".3"/>
-
-      <!-- Your PFP -->
-      <g clip-path="url(#photoClip)">
-
-        <image x="145"
-               y="375"
-               width="110"
-               height="110"
-               href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCALMAswDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaG..."/>
-
-        <!-- Scan line -->
-        <rect x="142"
-              y="374"
-              width="116"
-              height="3"
-              fill="url(#nameGrad2)"
-              filter="url(#glowB)"
-              opacity="0">
-
-          <animate attributeName="y"
-                   from="374"
-                   to="485"
-                   dur=".95s"
-                   begin="3.55s"
-                   fill="freeze"/>
-
-          <animate attributeName="opacity"
-                   values="0;1;1;0"
-                   keyTimes="0;.06;.85;1"
-                   dur=".95s"
-                   begin="3.55s"
-                   fill="freeze"/>
-
-        </rect>
-
-      </g>
-
-      <!-- Shield icon -->
-      <g transform="translate(130,430)"
-         style="animation:shieldPulse 4s ease-in-out infinite">
-
-        <use href="#badgeShield"/>
-
-      </g>
-
-      <!-- Lock icon -->
-      <g transform="translate(270,430)"
-         style="animation:shieldPulse 4s ease-in-out infinite;animation-delay:1.5s"
-         opacity=".7">
-
-        <use href="#badgeLock"/>
-
-      </g>
-
-      <!-- LED -->
-      <circle cx="270"
-              cy="488"
-              r="5"
-              fill="#0a0e1a"
-              stroke="url(#cardBorder)"
-              stroke-width="1.5"/>
-
-      <circle class="led"
-            cx="270"
-            cy="488"
-            r="2.1"
-            fill="#00d9ff"
-            opacity="0">
-
-        <animate attributeName="opacity"
-                 from="0"
-                 to="1"
-                 dur=".01s"
-                 begin="4.9s"
-                 fill="freeze"/>
-
-      </circle>
-
-      <!-- Verification -->
-      <text x="200"
-            y="510"
-            text-anchor="middle"
-            font-size="10"
-            letter-spacing="2"
-            fill="#5b6b84">
-
-        <animate attributeName="opacity"
-                 from="1"
-                 to="0"
-                 dur=".3s"
-                 begin="4.9s"
-                 fill="freeze"/>
-
-        VERIFYING...
-
-      </text>
-
-      <!-- Access granted -->
-      <text class="granted"
-            x="200"
-            y="510"
-            text-anchor="middle"
-            font-size="10.5"
-            letter-spacing="2"
-            font-weight="700"
-            fill="#00d9ff"
-            opacity="0"
-            filter="url(#glowB)">
-
-        <animate attributeName="opacity"
-                 from="0"
-                 to="1"
-                 dur=".3s"
-                 begin="4.9s"
-                 fill="freeze"/>
-
-        ✓ ACCESS GRANTED
-
-      </text>
-
-      <!-- Progress bar -->
-      <rect x="94"
-            y="520"
-            width="212"
-            height="8"
-            rx="4"
-            fill="#16273a"/>
-
-      <g clip-path="url(#barBar)">
-
-        <rect x="94"
-              y="520"
-              width="212"
-              height="8"
-              rx="4"
-              fill="url(#nameGrad2)"/>
-
-      </g>
-
-      <!-- Divider -->
-      <line x1="94"
-            y1="540"
-            x2="306"
-            y2="540"
-            stroke="url(#accentLine)"
-            stroke-width=".6"
-            opacity=".5"/>
-
-      <!-- Identity -->
-      <text x="200"
-            y="558"
-            text-anchor="middle"
-            font-size="16"
-            font-weight="700"
-            fill="#e8edf5"
-            letter-spacing="1">
-        RITHIN KRISHNA K.V.
-      </text>
-
-      <text x="200"
-            y="577"
-            text-anchor="middle"
-            font-size="11"
-            fill="#a855f7"
-            letter-spacing="3"
-            font-weight="600">
-        RIMU
-      </text>
-
-      <text x="200"
-            y="594"
-            text-anchor="middle"
-            font-size="8.5"
-            fill="#5b6b84"
-            letter-spacing="1.3">
-        CYBER SECURITY ENTHUSIAST
-      </text>
-
-      <!-- Links -->
-      <g opacity="0"
-         style="animation:fadeIn .7s ease 5.1s forwards">
-
-        <!-- Decorative line -->
-        <line x1="100"
-              y1="604"
-              x2="300"
-              y2="604"
-              stroke="#1a2a4a"
-              stroke-width=".5"/>
-
-        <!-- X -->
-        <g transform="translate(100,618)">
-
-          <g transform="scale(.7)">
-            <line x1="0"
-                  y1="0"
-                  x2="8"
-                  y2="8"
-                  stroke="#00d9ff"
-                  stroke-width="1.5"
-                  stroke-linecap="round"/>
-
-            <line x1="8"
-                  y1="0"
-                  x2="0"
-                  y2="8"
-                  stroke="#00d9ff"
-                  stroke-width="1.5"
-                  stroke-linecap="round"/>
-          </g>
-
-          <text x="14"
-                y="6"
-                font-size="8"
-                fill="#38bdf8"
-                opacity=".8">
-            x.com/RithinSec
-          </text>
-
-        </g>
-
-        <!-- GitHub -->
-        <g transform="translate(100,632)">
-
-          <rect x="-1"
-                y="-4"
-                width="12"
-                height="8"
-                rx="1.5"
-                fill="none"
-                stroke="#38bdf8"
-                stroke-width=".8"
-                opacity=".6"/>
-
-          <path d="M1 -2 L3 -1 L1 0"
-                fill="none"
-                stroke="#38bdf8"
-                stroke-width=".8"
-                stroke-linecap="round"
-                opacity=".6"/>
-
-          <line x1="4"
-                y1="1"
-                x2="8"
-                y2="1"
-                stroke="#38bdf8"
-                stroke-width=".8"
-                stroke-linecap="round"
-                opacity=".6"/>
-
-          <text x="14"
-                y="3"
-                font-size="8"
-                fill="#38bdf8"
-                opacity=".8">
-            github.com/rithinkrishnakv
-          </text>
-
-        </g>
-
-        <!-- Clearance -->
-        <text x="94"
-              y="668"
-              font-size="7.5"
-              fill="#3d5872"
-              letter-spacing="1">
-          CLEARANCE
-        </text>
-
-        <text x="306"
-              y="668"
-              text-anchor="end"
-              font-size="7.5"
-              fill="#3d5872"
-              letter-spacing="1">
-          LVL 8/10
-        </text>
-
-        <g transform="translate(94,676)">
-
-          <rect x="0" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="21" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="42" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="63" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="84" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="105" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="126" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="147" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
-          <rect x="168" y="0" width="19" height="8" rx="1.5" fill="#1b2f47"/>
-          <rect x="189" y="0" width="19" height="8" rx="1.5" fill="#1b2f47"/>
-
-        </g>
-
-      </g>
-
-      <!-- Barcode -->
-      <g transform="translate(94,694)">
-
-        <rect x="0" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="5" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="10" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="14.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="18" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="23" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="28" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="32" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="37" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="43" y="0" width="3.5" height="11" fill="#3d5872"/>
-        <rect x="50" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="54" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="59" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="64" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="69" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="73" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="78" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="83" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="87" y="0" width="3" height="11" fill="#3d5872"/>
-        <rect x="93" y="0" width="3" height="11" fill="#3d5872"/>
-        <rect x="99" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="105" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="110" y="0" width="3" height="11" fill="#3d5872"/>
-        <rect x="116.5" y="0" width="3.5" height="11" fill="#3d5872"/>
-        <rect x="123" y="0" width="3.5" height="11" fill="#3d5872"/>
-        <rect x="130" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="135.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="140" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="144.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="149.5" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="155" y="0" width="2" height="11" fill="#3d5872"/>
-        <rect x="160" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="165" y="0" width="3" height="11" fill="#3d5872"/>
-        <rect x="171" y="0" width="3.5" height="11" fill="#3d5872"/>
-        <rect x="177.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="181.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="186" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="190.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="195" y="0" width="2.5" height="11" fill="#3d5872"/>
-        <rect x="201" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="205.5" y="0" width="1.2" height="11" fill="#3d5872"/>
-        <rect x="210" y="0" width="3" height="11" fill="#3d5872"/>
-
-      </g>
-
-      <!-- Location -->
-      <text x="200"
-            y="712"
-            text-anchor="middle"
-            font-size="7.5"
-            fill="#3d5872"
-            letter-spacing="2">
-        KERALA, IN
-      </text>
-
-      <!-- Corner decorations -->
-      <g stroke="#00d9ff"
-         stroke-width="1"
-         opacity=".4">
-
-        <path d="M68 316 L68 310 L74 310"/>
-        <path d="M332 310 L338 310 L338 316"/>
-        <path d="M68 694 L68 700 L74 700"/>
-        <path d="M338 694 L338 700 L332 700"/>
-
-      </g>
-
-      <g stroke="#a855f7"
-         stroke-width=".7"
-         opacity=".25">
-
-        <path d="M72 318 L72 314 L76 314"/>
-        <path d="M330 314 L334 314 L334 318"/>
-        <path d="M72 696 L72 692 L76 692"/>
-        <path d="M334 696 L334 692 L330 692"/>
-
-      </g>
-
-    </g>
-
-  </g>
+<g class="sway">
+
+<path d="M181 -80 L219 -80 L216 236 L184 236 Z" fill="url(#strapGrad)"/>
+<text font-size="10" font-weight="700" fill="#eaf6ff" opacity=".9" letter-spacing="3" transform="translate(213,8) rotate(90)">RITHINKRISHNAKV</text>
+
+<rect x="178" y="232" width="44" height="26" rx="6" fill="#9aa6b7" stroke="#4a5568" stroke-width="1"/>
+<rect x="189" y="238" width="22" height="7" rx="3.5" fill="#333c4a"/>
+<circle cx="200" cy="272" r="14" fill="none" stroke="#a2acbd" stroke-width="5.5"/>
+
+<g class="wob">
+
+<rect x="62" y="298" width="276" height="360" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
+<rect x="62" y="298" width="276" height="360" rx="20" fill="url(#microHex)" opacity=".55"/>
+
+<rect x="62" y="298" width="276" height="34" rx="20" fill="#13253a" opacity=".8"/>
+<rect x="62" y="314" width="276" height="18" fill="#13253a" opacity=".8"/>
+
+<text x="78" y="320" font-size="9" fill="#5b6b84" letter-spacing="1.5">ACCESS BADGE</text>
+<text x="322" y="320" text-anchor="end" font-size="9" fill="#00d9ff" letter-spacing="1">OPR-096925</text>
+
+<circle cx="200" cy="412" r="63" fill="none" stroke="url(#cardBorder)" stroke-width="2.5"/>
+
+<g clip-path="url(#photoClip)">
+<rect x="142" y="354" width="116" height="116" fill="#0a0e1a"/>
+<image x="142" y="354" width="116" height="116" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{img_b64}"/>
+<rect x="142" y="354" width="116" height="116" fill="#06101d" opacity=".08"/>
+<rect x="142" y="354" width="116" height="2" fill="url(#nameGrad2)" opacity=".8">
+<animate attributeName="y" from="354" to="468" dur=".95s" begin="3.55s" fill="freeze"/>
+</rect>
+</g>
+
+<g transform="translate(130,412)">
+<path d="M0 -10 L8 -6 L8 2 C8 6 4 9 0 11 C-4 9 -8 6 -8 2 L-8 -6 Z" fill="none" stroke="#00d9ff" stroke-width="1.4"/>
+<path d="M-3 1 L-1 4 L3 -1" fill="none" stroke="#00d9ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<g transform="translate(270,412)">
+<rect x="-5" y="-1" width="10" height="8" rx="1.5" fill="none" stroke="#a855f7" stroke-width="1.2"/>
+<path d="M-3 -1 L-3 -3.5 C-3 -6 3 -6 3 -3.5 L3 -1" fill="none" stroke="#a855f7" stroke-width="1.2" stroke-linecap="round"/>
+<circle cx="0" cy="2.5" r="1.2" fill="#a855f7"/>
+</g>
+
+<circle cx="266" cy="472" r="5" fill="#0a0e1a" stroke="url(#cardBorder)" stroke-width="1.5"/>
+<circle class="led" cx="266" cy="472" r="2.1" fill="#00d9ff"/>
+
+<text x="200" y="490" text-anchor="middle" font-size="10" letter-spacing="2" fill="#00d9ff" opacity="0">
+✓ ACCESS GRANTED
+<animate attributeName="opacity" from="0" to="1" dur=".3s" begin="4.9s" fill="freeze"/>
+</text>
+
+<rect x="94" y="500" width="212" height="8" rx="4" fill="#16273a"/>
+<rect x="94" y="500" width="212" height="8" rx="4" fill="url(#nameGrad2)">
+<animate attributeName="width" from="0" to="212" dur="1.1s" begin="3.7s" fill="freeze"/>
+</rect>
+
+<line x1="94" y1="520" x2="306" y2="520" stroke="url(#nameGrad2)" stroke-width=".6" opacity=".5"/>
+
+<text x="200" y="542" text-anchor="middle" font-size="16" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
+<text x="200" y="561" text-anchor="middle" font-size="11" fill="#a855f7" letter-spacing="3" font-weight="600">RIMU</text>
+<text x="200" y="578" text-anchor="middle" font-size="8.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
+
+<g opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur=".7s" begin="5.1s" fill="freeze"/>
+
+<line x1="78" y1="588" x2="322" y2="588" stroke="#1a2a4a" stroke-width=".5"/>
+
+<text x="200" y="606" text-anchor="middle" font-size="8" fill="#7dd3fc">𝕏 @RITHINSEC</text>
+
+<text x="78" y="626" font-size="7.5" fill="#3d5872" letter-spacing="1">CLEARANCE</text>
+<text x="322" y="626" text-anchor="end" font-size="7.5" fill="#3d5872" letter-spacing="1">LVL 8/10</text>
+
+<g transform="translate(78,634)">
+<rect x="0" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="21" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="42" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="63" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="84" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="105" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="126" y="0" width="19" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="147" y="0" width="8" height="8" rx="1.5" fill="#00d9ff"/>
+<rect x="158" y="0" width="19" height="8" rx="1.5" fill="#1b2f47"/>
+<rect x="179" y="0" width="19" height="8" rx="1.5" fill="#1b2f47"/>
+</g>
 
 </g>
 
-</svg>
+<text x="200" y="654" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="2">KERALA, IN</text>
+
+<g stroke="#00d9ff" stroke-width="1" opacity=".4">
+<path d="M68 304 L68 298 L74 298"/>
+<path d="M332 298 L338 298 L338 304"/>
+<path d="M68 650 L68 658 L74 658"/>
+<path d="M338 650 L338 658 L332 658"/>
+</g>
+
+</g>
+</g>
+</g>
+</g>
+</svg>'''
+
+out = Path("/mnt/data/rithin-badge-final-embedded-pfp.svg")
+out.write_text(svg, encoding="utf-8")
+print(f"Created {out}")
+print(f"Full SVG size: {out.stat().st_size:,} bytes")
+print(f"Embedded image data: {len(img_b64):,} base64 characters")
