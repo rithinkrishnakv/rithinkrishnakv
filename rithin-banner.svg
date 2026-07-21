@@ -67,10 +67,13 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <clipPath id="tag2"><rect x="56" y="180" width="0" height="30"><animate attributeName="width" values="0;0;320;320;0;0" keyTimes="0;.27;.34;.46;.48;1" dur="20s" begin="2.5s" repeatCount="indefinite"/></rect></clipPath>
 <clipPath id="tag3"><rect x="56" y="180" width="0" height="30"><animate attributeName="width" values="0;0;320;320;0;0" keyTimes="0;.52;.59;.71;.73;1" dur="20s" begin="2.5s" repeatCount="indefinite"/></rect></clipPath>
 <clipPath id="tag4"><rect x="56" y="180" width="0" height="30"><animate attributeName="width" values="0;0;320;320;0;0" keyTimes="0;.77;.84;.96;.98;1" dur="20s" begin="2.5s" repeatCount="indefinite"/></rect></clipPath>
+<filter id="neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="hexGrid" width="34" height="30" patternUnits="userSpaceOnUse"><path d="M8.5 0L25.5 0L34 15L25.5 30L8.5 30L0 15Z" fill="none" stroke="#38bdf8" stroke-opacity=".06" stroke-width="1"/></pattern>
 </defs>
 
 <rect width="1200" height="300" rx="18" fill="url(#bgGrad)"/>
 <rect width="1200" height="300" rx="18" fill="url(#dots)"/>
+<rect width="1200" height="300" rx="18" fill="url(#hexGrid)" opacity=".75"/>
 <circle cx="150" cy="70" r="190" fill="url(#glow1)"/>
 <circle cx="980" cy="190" r="240" fill="url(#glow2)"/>
 
@@ -118,8 +121,16 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 </g>
 
 <g opacity="0" style="animation:fadeIn .7s ease 3.3s forwards">
-<text x="56" y="244" font-size="13" fill="#5b6b84">📍 Kerala, IN</text>
-<text x="168" y="244" font-size="13" fill="#3d5872">status:  idk what am doing</text>
+<text x="56" y="244" font-size="13" fill="#5b6b84">▣ KERALA, IN</text>
+<text x="175" y="244" font-size="13" fill="#3d5872">status: <tspan fill="#00d9ff">RESEARCHING</tspan></text>
+</g>
+
+<!-- social / web endpoints -->
+<g opacity="0" style="animation:fadeIn .7s ease 3.7s forwards">
+<rect x="56" y="260" width="250" height="22" rx="5" fill="#08131f" stroke="#1e4966" stroke-width="1"/>
+<text x="68" y="275" font-size="10.5" fill="#7dd3fc">↗ rithinkrishnakv.vercel.app</text>
+<rect x="316" y="260" width="132" height="22" rx="5" fill="#08131f" stroke="#1e4966" stroke-width="1"/>
+<text x="328" y="275" font-size="10.5" fill="#7dd3fc">𝕏 @RithinSec</text>
 </g>
 
 <!-- right-side network graph motif -->
@@ -145,6 +156,15 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <circle cx="330" cy="96" r="5"/>
 </g>
 <circle class="node" cx="96" cy="118" r="6.5" fill="#00d9ff" stroke="none" style="animation-delay:.4s"/>
+</g>
+
+<!-- cyber HUD telemetry -->
+<g transform="translate(790,210)" opacity=".82">
+<rect x="0" y="0" width="350" height="58" rx="6" fill="#07111c" stroke="#173350"/>
+<text x="14" y="18" font-size="9" fill="#3d5872" letter-spacing="1.5">LIVE TELEMETRY // SECURITY NODE</text>
+<path d="M14 39 H58 L68 28 L80 46 L93 34 L106 39 H145 L157 23 L169 44 L184 31 L197 39 H235" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity=".9"/>
+<circle cx="315" cy="18" r="4" fill="#00d9ff" filter="url(#neon)"/>
+<text x="268" y="47" font-size="9" fill="#00d9ff">ONLINE</text>
 </g>
 
 <!-- ambient scanline -->
