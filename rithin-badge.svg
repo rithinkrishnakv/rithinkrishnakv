@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 680" width="400" height="680" role="img" aria-label="Rithin Krishna (Rimu) access badge">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 760" width="400" height="760" role="img" aria-label="Rithin Krishna (Rimu) access badge">
 <defs>
 <style type="text/css"><![CDATA[
 text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
@@ -18,21 +18,24 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 .led{animation:ledBlink 1.6s ease-in-out 5.2s infinite}
 ]]></style>
 
-<linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0%" stop-color="#0ea5e9"/><stop offset="50%" stop-color="#00d9ff"/><stop offset="100%" stop-color="#0ea5e9"/>
+<linearGradient id="strapGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#a78bfa"/><stop offset="55%" stop-color="#6ba7ef"/><stop offset="100%" stop-color="#00d9ff"/>
 </linearGradient>
 <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#101d2c"/><stop offset="100%" stop-color="#080d15"/>
+<stop offset="0%" stop-color="#131b2c"/><stop offset="100%" stop-color="#080d15"/>
 </linearGradient>
 <linearGradient id="cardBorder" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#0ea5e9;#38bdf8;#00d9ff" dur="9s" repeatCount="indefinite"/></stop>
-<stop offset="100%" stop-color="#0ea5e9"><animate attributeName="stop-color" values="#0ea5e9;#38bdf8;#00d9ff;#0ea5e9" dur="9s" repeatCount="indefinite"/></stop>
+<stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#a78bfa;#38bdf8;#00d9ff" dur="10s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#38bdf8;#00d9ff;#a78bfa" dur="10s" repeatCount="indefinite"/></stop>
 </linearGradient>
 <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
 <stop offset="0%" stop-color="#c9d3e0"/><stop offset="45%" stop-color="#8b96a8"/><stop offset="55%" stop-color="#6a7488"/><stop offset="100%" stop-color="#a2acbd"/>
 </linearGradient>
 <linearGradient id="nameGrad2" x1="0" y1="0" x2="1" y2="0">
 <stop offset="0%" stop-color="#00d9ff"/><stop offset="100%" stop-color="#8fe3ff"/>
+</linearGradient>
+<linearGradient id="violetGrad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#a78bfa"/>
 </linearGradient>
 <radialGradient id="cardGlow" cx="50%" cy="45%" r="55%">
 <stop offset="0%" stop-color="#0ea5e9" stop-opacity=".16"/><stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
@@ -49,9 +52,14 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <rect class="p" x="50" y="560" width="4" height="4" transform="rotate(45 52 562)" style="animation-duration:6s;animation-delay:.3s"/>
 <rect class="p" x="342" y="500" width="3.4" height="3.4" transform="rotate(45 343.7 501.7)" style="animation-duration:5.4s;animation-delay:1.4s"/>
 <rect class="p" x="66" y="430" width="3" height="3" transform="rotate(45 67.5 431.5)" style="animation-duration:6.6s;animation-delay:2.1s"/>
-<rect class="p" x="332" y="610" width="3.6" height="3.6" transform="rotate(45 333.8 611.8)" style="animation-duration:5.8s;animation-delay:.8s"/>
+<rect class="p" x="332" y="670" width="3.6" height="3.6" transform="rotate(45 333.8 671.8)" style="animation-duration:5.8s;animation-delay:.8s"/>
+<rect class="p" x="60" y="700" width="3" height="3" transform="rotate(45 61.5 701.5)" style="animation-duration:6.2s;animation-delay:2.6s"/>
 </g>
-<circle cx="200" cy="420" r="230" fill="url(#cardGlow)"/>
+<g fill="#a78bfa">
+<rect class="p" x="348" y="600" width="3.2" height="3.2" transform="rotate(45 349.6 601.6)" style="animation-duration:7s;animation-delay:1.9s"/>
+<rect class="p" x="58" y="560" width="3" height="3" transform="rotate(45 59.5 561.5)" style="animation-duration:5.6s;animation-delay:.5s"/>
+</g>
+<circle cx="200" cy="450" r="260" fill="url(#cardGlow)"/>
 
 <g class="settle"><g class="sway">
   <path d="M181 -80 L219 -80 L216 236 L184 236 Z" fill="url(#strapGrad)"/>
@@ -62,11 +70,15 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <circle cx="200" cy="272" r="14" fill="none" stroke="url(#metal)" stroke-width="5.5"/>
 
   <g class="wob">
-  <rect x="62" y="298" width="276" height="360" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="298" width="276" height="442" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
   <rect x="62" y="298" width="276" height="34" rx="20" fill="#13253a" opacity=".8"/>
   <rect x="62" y="314" width="276" height="18" fill="#13253a" opacity=".8"/>
   <text x="78" y="320" font-size="9" fill="#5b6b84" letter-spacing="1.5">ACCESS BADGE</text>
-  <text x="322" y="320" text-anchor="end" font-size="9" fill="#00d9ff" letter-spacing="1">OPR-096925</text>
+  <text x="322" y="320" text-anchor="end" font-size="9" fill="url(#violetGrad)" letter-spacing="1">OPR-096925</text>
+  <g transform="translate(192,306)" fill="none" stroke="#00d9ff" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M8 1 L14.5 3.4 V8.6 C14.5 12.4 11.8 14.8 8 16 C4.2 14.8 1.5 12.4 1.5 8.6 V3.4 Z"/>
+    <path d="M4.8 8.3 L7 10.6 L11.4 5.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 
   <circle cx="200" cy="412" r="63" fill="none" stroke="url(#cardBorder)" stroke-width="2.5"/>
   <g clip-path="url(#photoClip)">
@@ -81,6 +93,14 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <circle class="led" cx="266" cy="472" r="2.1" fill="#00d9ff" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur=".01s" begin="4.9s" fill="freeze"/>
   </circle>
+  <circle cx="134" cy="472" r="9" fill="#0a0e1a" stroke="url(#cardBorder)" stroke-width="1.3" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur=".01s" begin="4.9s" fill="freeze"/>
+  </circle>
+  <g transform="translate(128,466)" fill="none" stroke="#a78bfa" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur=".4s" begin="4.95s" fill="freeze"/>
+    <path d="M2 5.5 V4 C2 1.8 3.8 0 6 0 C8.2 0 10 1.8 10 4 V5.5"/>
+    <rect x="0.5" y="5.5" width="11" height="8" rx="1.8" fill="#0a0e1a"/>
+  </g>
 
   <text x="200" y="496" text-anchor="middle" font-size="10.5" letter-spacing="2" fill="#5b6b84">
     <animate attributeName="opacity" from="1" to="0" dur=".3s" begin="4.9s" fill="freeze"/>
@@ -95,13 +115,31 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <g clip-path="url(#barBar)"><rect x="94" y="506" width="212" height="9" rx="4.5" fill="url(#nameGrad2)"/></g>
 
   <text x="200" y="542" text-anchor="middle" font-size="17" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
-  <text x="200" y="562" text-anchor="middle" font-size="12" fill="#00d9ff" letter-spacing="3">RIMU</text>
+  <text x="200" y="562" text-anchor="middle" font-size="12" fill="url(#violetGrad)" letter-spacing="3">RIMU</text>
   <text x="200" y="581" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
 
+  <rect x="94" y="595" width="212" height="1" fill="#1b2f47"/>
+
+  <g opacity="0" style="animation:fadeIn .7s ease 4.6s forwards" font-size="10.5" fill="#a9c2d9" letter-spacing=".3">
+    <g stroke="#00d9ff" stroke-width="1.2" fill="none" stroke-linecap="round">
+      <circle cx="99" cy="609" r="6"/>
+      <path d="M93 609 H105 M99 603 C102 606 102 612 99 615 M99 603 C96 606 96 612 99 615"/>
+    </g>
+    <text x="112" y="613">rithinkrishnakv.vercel.app</text>
+
+    <g stroke="#e8edf5" stroke-width="1.4" stroke-linecap="round">
+      <path d="M94.5 622.5 L103.5 631.5 M103.5 622.5 L94.5 631.5"/>
+    </g>
+    <text x="112" y="631">x.com/RithinSec</text>
+
+    <text x="94" y="649" fill="#00d9ff">&gt;_</text>
+    <text x="112" y="649">github.com/rithinkrishnakv</text>
+  </g>
+
   <g opacity="0" style="animation:fadeIn .7s ease 5.1s forwards">
-  <text x="94" y="601" font-size="8.5" fill="#3d5872" letter-spacing="1">CLEARANCE</text>
-  <text x="306" y="601" text-anchor="end" font-size="8.5" fill="#3d5872" letter-spacing="1">LVL 8/10</text>
-  <g transform="translate(94,609)">
+  <text x="94" y="671" font-size="8.5" fill="#3d5872" letter-spacing="1">CLEARANCE</text>
+  <text x="306" y="671" text-anchor="end" font-size="8.5" fill="#3d5872" letter-spacing="1">LVL 8/10</text>
+  <g transform="translate(94,679)">
     <rect x="0" y="0" width="19.4" height="9" rx="1.5" fill="#00d9ff"/>
     <rect x="21.4" y="0" width="19.4" height="9" rx="1.5" fill="#00d9ff"/>
     <rect x="42.8" y="0" width="19.4" height="9" rx="1.5" fill="#00d9ff"/>
@@ -115,8 +153,8 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   </g>
   </g>
 
-  <g transform="translate(94,631)"><rect x="0" y="0" width="3" height="12" fill="#3d5872"/><rect x="6" y="0" width="3" height="12" fill="#3d5872"/><rect x="11.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="16.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="20.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="25.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="30.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="33.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="39.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="45.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="51.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="54.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="59.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="63.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="69.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="73.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="77.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="81.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="84.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="90.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="95.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="101.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="106.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="112.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="118.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="124.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="129.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="134.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="139.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="144.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="149.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="153.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="158.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="164.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="170.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="174.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="178.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="182.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="187.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="193.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="198.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="202.0" y="0" width="3.5" height="12" fill="#3d5872"/></g>
-  <text x="200" y="654" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="2">KERALA, IN</text>
+  <g transform="translate(94,701)"><rect x="0" y="0" width="3" height="12" fill="#3d5872"/><rect x="6" y="0" width="3" height="12" fill="#3d5872"/><rect x="11.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="16.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="20.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="25.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="30.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="33.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="39.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="45.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="51.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="54.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="59.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="63.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="69.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="73.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="77.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="81.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="84.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="90.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="95.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="101.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="106.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="112.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="118.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="124.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="129.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="134.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="139.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="144.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="149.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="153.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="158.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="164.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="170.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="174.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="178.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="182.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="187.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="193.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="198.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="202.0" y="0" width="3.5" height="12" fill="#3d5872"/></g>
+  <text x="200" y="724" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="2">KERALA, IN</text>
 
   </g>
 </g></g>
