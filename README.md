@@ -1,17 +1,46 @@
 <div align="center">
 
-<!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A0E1A,50:0D1B2A,100:00D9FF&height=200&section=header&text=Rithin%20Krishna%20(Rimu)&fontSize=42&fontColor=FFFFFF&fontAlignY=38&desc=Cyber%20Security%20%7C%20Ethical%20Hacking%20%7C%20System%20Stabilization&descSize=16&descAlignY=58&descColor=00D9FF&animation=fadeIn" alt="header" />
+<!-- Animated banner (local SVG — no external render service, so it never breaks/rate-limits) -->
+<img src="./rithin-banner.svg" alt="Rithin Krishna (Rimu) — Cyber Security Enthusiast" width="100%"/>
 
-<!-- Typing SVG -->
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Cyber+Security+Enthusiast+%F0%9F%9B%A1%EF%B8%8F;Ethical+Hacker+%F0%9F%94%93;System+Stabilizer+%E2%9A%99%EF%B8%8F;Turning+Vulnerabilities+into+Defenses+%F0%9F%94%90)](https://git.io/typing-svg)
+<br/>
 
-<!-- Profile Views -->
 <img src="https://komarev.com/ghpvc/?username=rithinkrishnakv&label=Profile+Views&color=00D9FF&style=for-the-badge" alt="Profile Views" />
 
 </div>
 
----
+<br/>
+
+<table align="center" border="0">
+<tr>
+<td width="34%" align="center" valign="middle">
+
+<!-- Swinging access badge (React-Bits-style lanyard, reimagined as a security clearance card) -->
+<img src="./rithin-badge.svg" alt="Rithin Krishna access badge" width="300"/>
+
+</td>
+<td width="66%" valign="middle">
+
+### 🛠️ Deployed Tools
+
+| Tool | Stack | Focus |
+|:---|:---:|:---|
+| [**aegismimic**](https://github.com/rithinkrishnakv/aegismimic) | `Python` | Deception engine — honeypot directories with active camouflage |
+| [**appraisal-dex**](https://github.com/rithinkrishnakv/appraisal-dex) | `Python` | Android static analysis → auto-generated adb payloads & Frida agents |
+| [**jobless-router**](https://github.com/rithinkrishnakv/jobless-router) | `Python` | Real-time BGP threat intel — AS-path & RPKI validation |
+| [**vetod**](https://github.com/rithinkrishnakv/vetod) | `Python` | Fail-closed, scope-enforcing proxy for bug-bounty tooling |
+| [**mshwisper**](https://github.com/rithinkrishnakv/mshwisper) | `Rust` | Zero-config, encrypted LAN mesh chat — no server required |
+| [**godseye-ex**](https://github.com/rithinkrishnakv/godseye-ex) | `Python` | AST-based taint analysis for browser-extension RCE chains |
+
+<br/>
+
+> *"The quieter you become, the more you can hear — and the more vulnerabilities you can find."*
+
+</td>
+</tr>
+</table>
+
+<br/>
 
 ## `$ whoami`
 
@@ -27,8 +56,6 @@
   Status  : [■■■■■■■■□□] Leveling Up...
 ```
 
-> *"The quieter you become, the more you can hear — and the more vulnerabilities you can find."*
-
 ---
 
 ## `$ cat interests.txt`
@@ -37,7 +64,7 @@
 🔍 &nbsp;**Vulnerability Assessment & Exploitation**  
 🧠 &nbsp;**CTF Challenges & Security Research**  
 🐧 &nbsp;**Linux Systems & Hardening**  
-📝 &nbsp;**Writing Security Walkthroughs on Medium**  
+📝 &nbsp;**Writing Security Walkthroughs on Medium**
 
 ---
 
