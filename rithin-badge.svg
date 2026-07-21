@@ -43,6 +43,8 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
 <clipPath id="photoClip"><circle cx="200" cy="412" r="58"/></clipPath>
 <clipPath id="barBar"><rect x="170" y="0" width="0" height="9" rx="4.5"><animate attributeName="width" from="0" to="212" dur="1.1s" begin="3.7s" fill="freeze" calcMode="spline" keySplines=".2 .8 .3 1"/></rect></clipPath>
+<pattern id="microHex" width="24" height="21" patternUnits="userSpaceOnUse"><path d="M6 0L18 0L24 10.5L18 21L6 21L0 10.5Z" fill="none" stroke="#38bdf8" stroke-opacity=".06" stroke-width=".8"/></pattern>
+<filter id="badgeNeon" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
 
 <g fill="#00d9ff">
@@ -63,6 +65,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
   <g class="wob">
   <rect x="62" y="298" width="276" height="360" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="298" width="276" height="360" rx="20" fill="url(#microHex)" opacity=".55"/>
   <rect x="62" y="298" width="276" height="34" rx="20" fill="#13253a" opacity=".8"/>
   <rect x="62" y="314" width="276" height="18" fill="#13253a" opacity=".8"/>
   <text x="78" y="320" font-size="9" fill="#5b6b84" letter-spacing="1.5">ACCESS BADGE</text>
@@ -94,6 +97,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <rect x="94" y="506" width="212" height="9" rx="4.5" fill="#16273a"/>
   <g clip-path="url(#barBar)"><rect x="94" y="506" width="212" height="9" rx="4.5" fill="url(#nameGrad2)"/></g>
 
+  <text x="200" y="530" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="1.6">IDENTITY // VERIFIED // SECURITY RESEARCH</text>
   <text x="200" y="542" text-anchor="middle" font-size="17" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
   <text x="200" y="562" text-anchor="middle" font-size="12" fill="#00d9ff" letter-spacing="3">RIMU</text>
   <text x="200" y="581" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
@@ -117,6 +121,16 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
   <g transform="translate(94,631)"><rect x="0" y="0" width="3" height="12" fill="#3d5872"/><rect x="6" y="0" width="3" height="12" fill="#3d5872"/><rect x="11.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="16.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="20.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="25.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="30.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="33.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="39.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="45.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="51.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="54.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="59.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="63.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="69.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="73.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="77.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="81.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="84.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="90.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="95.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="101.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="106.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="112.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="118.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="124.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="129.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="134.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="139.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="144.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="149.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="153.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="158.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="164.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="170.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="174.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="178.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="182.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="187.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="193.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="198.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="202.0" y="0" width="3.5" height="12" fill="#3d5872"/></g>
   <text x="200" y="654" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="2">KERALA, IN</text>
+
+  <!-- social endpoints -->
+  <a href="https://rithinkrishnakv.vercel.app/" target="_blank">
+    <rect x="78" y="660" width="125" height="16" rx="4" fill="#08131f" stroke="#173350"/>
+    <text x="140.5" y="671" text-anchor="middle" font-size="7.2" fill="#7dd3fc">↗ PORTFOLIO</text>
+  </a>
+  <a href="https://x.com/RithinSec" target="_blank">
+    <rect x="197" y="660" width="125" height="16" rx="4" fill="#08131f" stroke="#173350"/>
+    <text x="259.5" y="671" text-anchor="middle" font-size="7.2" fill="#7dd3fc">𝕏 @RITHINSEC</text>
+  </a>
 
   </g>
 </g></g>
