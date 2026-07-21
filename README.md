@@ -101,6 +101,8 @@
 
 <div align="center">
 
+[![Website](https://img.shields.io/badge/rithinkrishnakv.vercel.app-00D9FF.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://rithinkrishnakv.vercel.app/)
+[![X](https://img.shields.io/badge/X-000000.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/RithinSec)
 [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@rithinkrishnakv)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rithin-krishna-k-v-15593b381/)
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rithinkrishnakv)
