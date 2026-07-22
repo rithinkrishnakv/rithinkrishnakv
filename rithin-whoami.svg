@@ -25,7 +25,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <circle cx="30" cy="24" r="3" fill="#3d5872"/>
 <circle cx="42" cy="24" r="3" fill="#516781"/>
 <circle cx="54" cy="24" r="3" fill="#7dd3fc"/>
-<text x="70" y="28" font-size="10.5" fill="#3d5872" letter-spacing="1">rimu@kali: ~/whoami.sh</text>
+<text x="70" y="28" font-size="10.5" fill="#3d5872" letter-spacing="2">rimu@kali: ~/whoami.sh</text>
 <path d="M20 38 H680" stroke="#173350" stroke-width="1"/>
 
 <g clip-path="url(#hdr1)"><text x="46" y="38" font-size="15" fill="#3d5872">┌─[<tspan fill="#7dd3fc">rimu@kali</tspan>]─[~]</text></g>
