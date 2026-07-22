@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 760" width="400" height="760" role="img" aria-label="Rithin Krishna (Rimu) access badge">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 655" width="400" height="655" role="img" aria-label="Rithin Krishna (Rimu) access badge">
 <defs>
 <style type="text/css"><![CDATA[
 text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
@@ -52,8 +52,8 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <rect class="p" x="50" y="560" width="4" height="4" transform="rotate(45 52 562)" style="animation-duration:6s;animation-delay:.3s"/>
 <rect class="p" x="342" y="500" width="3.4" height="3.4" transform="rotate(45 343.7 501.7)" style="animation-duration:5.4s;animation-delay:1.4s"/>
 <rect class="p" x="66" y="430" width="3" height="3" transform="rotate(45 67.5 431.5)" style="animation-duration:6.6s;animation-delay:2.1s"/>
-<rect class="p" x="332" y="670" width="3.6" height="3.6" transform="rotate(45 333.8 671.8)" style="animation-duration:5.8s;animation-delay:.8s"/>
-<rect class="p" x="60" y="700" width="3" height="3" transform="rotate(45 61.5 701.5)" style="animation-duration:6.2s;animation-delay:2.6s"/>
+<rect class="p" x="332" y="600" width="3.6" height="3.6" transform="rotate(45 333.8 601.8)" style="animation-duration:5.8s;animation-delay:.8s"/>
+<rect class="p" x="60" y="620" width="3" height="3" transform="rotate(45 61.5 621.5)" style="animation-duration:6.2s;animation-delay:2.6s"/>
 </g>
 <g fill="#a78bfa">
 <rect class="p" x="348" y="600" width="3.2" height="3.2" transform="rotate(45 349.6 601.6)" style="animation-duration:7s;animation-delay:1.9s"/>
@@ -62,6 +62,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <circle cx="200" cy="450" r="260" fill="url(#cardGlow)"/>
 
 <g class="settle"><g class="sway">
+  <g transform="translate(0,-110)">
   <path d="M181 -80 L219 -80 L216 236 L184 236 Z" fill="url(#strapGrad)"/>
   <text font-size="10" font-weight="700" fill="#eaf6ff" opacity=".9" letter-spacing="3" transform="translate(213,8) rotate(90)">RITHINKRISHNAKV</text>
 
@@ -156,6 +157,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <g transform="translate(94,701)"><rect x="0" y="0" width="3" height="12" fill="#3d5872"/><rect x="6" y="0" width="3" height="12" fill="#3d5872"/><rect x="11.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="16.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="20.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="25.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="30.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="33.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="39.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="45.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="51.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="54.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="59.0" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="63.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="69.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="73.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="77.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="81.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="84.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="90.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="95.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="101.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="106.0" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="112.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="118.5" y="0" width="4" height="12" fill="#3d5872"/><rect x="124.5" y="0" width="3" height="12" fill="#3d5872"/><rect x="129.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="134.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="139.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="144.0" y="0" width="2" height="12" fill="#3d5872"/><rect x="149.5" y="0" width="2" height="12" fill="#3d5872"/><rect x="153.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="158.5" y="0" width="3.5" height="12" fill="#3d5872"/><rect x="164.0" y="0" width="4" height="12" fill="#3d5872"/><rect x="170.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="174.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="178.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="182.5" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="187.5" y="0" width="2.5" height="12" fill="#3d5872"/><rect x="193.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="198.0" y="0" width="1.5" height="12" fill="#3d5872"/><rect x="202.0" y="0" width="3.5" height="12" fill="#3d5872"/></g>
   <text x="200" y="724" text-anchor="middle" font-size="8" fill="#3d5872" letter-spacing="2">KERALA, IN</text>
 
+  </g>
   </g>
 </g></g>
 </svg>
