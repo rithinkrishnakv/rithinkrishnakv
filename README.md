@@ -44,27 +44,21 @@
 
 ## `$ whoami`
 
-```
-┌─[rimu@kali]─[~]
-└──╼ $ cat profile.txt
+<div align="center">
 
-  Name    : Rithin Krishna K.V
-  Alias   : Rimu
-  Role    : Cyber Security Enthusiast | Ethical Hacker
-  Mission : Turning Vulnerabilities into Defenses
-  Base    : Kerala, India 🇮🇳
-  Status  : [■■■■■■■■□□] Leveling Up...
-```
+<img src="./rithin-whoami.svg" alt="whoami terminal output" width="640"/>
+
+</div>
 
 ---
 
 ## `$ cat interests.txt`
 
-🛡️ &nbsp;**Offensive Security & Penetration Testing**  
-🔍 &nbsp;**Vulnerability Assessment & Exploitation**  
-🧠 &nbsp;**CTF Challenges & Security Research**  
-🐧 &nbsp;**Linux Systems & Hardening**  
-📝 &nbsp;**Writing Security Walkthroughs on Medium**
+<div align="center">
+
+<img src="./rithin-interests.svg" alt="Security interests" width="640"/>
+
+</div>
 
 ---
 
@@ -96,14 +90,7 @@
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=rithinkrishnakv&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=E8EDF5" alt="GitHub Stats"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rithinkrishnakv&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=E8EDF5" alt="Top Languages"/>
-
-</div>
-
-<div align="center">
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=rithinkrishnakv&theme=tokyonight&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" />
+<img src="./rithin-stats.svg" alt="GitHub contribution stats and top languages" width="640"/>
 
 </div>
 
@@ -113,7 +100,7 @@
 
 <div align="center">
 
-[![Rimu's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=rithinkrishnakv&bg_color=0D1117&color=00D9FF&line=00D9FF&point=FFFFFF&area=true&hide_border=true)](https://github.com/rithinkrishnakv)
+<img src="./rithin-activity.svg" alt="Rimu's contribution activity graph" width="640"/>
 
 </div>
 
