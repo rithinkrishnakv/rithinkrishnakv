@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 262" width="700" height="262" role="img" aria-label="Contribution activity graph">
+<defs>
+<style type="text/css"><![CDATA[
+text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes pulseDot{0%,100%{opacity:.7;r:3.4}50%{opacity:1;r:4.6}}
+.pulse{animation:pulseDot 2.4s ease-in-out infinite}
+]]></style>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#0d1420"/><stop offset="100%" stop-color="#080c14"/>
+</linearGradient>
+<linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#a78bfa;#00d9ff" dur="10s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#00d9ff;#a78bfa" dur="10s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#00d9ff" stop-opacity=".35"/>
+<stop offset="100%" stop-color="#00d9ff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="areaReveal"><rect x="50" y="60" width="0" height="170"><animate attributeName="width" from="0" to="620" dur="2.4s" begin=".5s" fill="freeze" calcMode="spline" keySplines=".25 .7 .3 1"/></rect></clipPath>
+</defs>
+
+<rect width="700" height="262" rx="16" fill="url(#bg)"/>
+<rect width="700" height="262" rx="16" fill="none" stroke="url(#border)" stroke-width="1.6"/>
+
+<circle cx="30" cy="24" r="3" fill="#3d5872"/>
+<circle cx="42" cy="24" r="3" fill="#516781"/>
+<circle cx="54" cy="24" r="3" fill="#7dd3fc"/>
+<text x="70" y="28" font-size="10.5" fill="#3d5872" letter-spacing="1">rimu@kali: ~/activity_graph.log</text>
+<path d="M20 38 H680" stroke="#173350" stroke-width="1"/>
+
+<text x="350" y="55" text-anchor="middle" font-size="13" fill="#7dd3fc" font-weight="700">Rithin Krishna K V's Contribution Graph</text>
+
+<text x="40" y="223.0" font-size="9.5" fill="#4a5b73" text-anchor="end">0</text><line x1="50" y1="220.0" x2="670" y2="220.0" stroke="#152233" stroke-width="1" stroke-dasharray="2 4"/><text x="40" y="173.0" font-size="9.5" fill="#4a5b73" text-anchor="end">4</text><line x1="50" y1="170.0" x2="670" y2="170.0" stroke="#152233" stroke-width="1" stroke-dasharray="2 4"/><text x="40" y="123.0" font-size="9.5" fill="#4a5b73" text-anchor="end">8</text><line x1="50" y1="120.0" x2="670" y2="120.0" stroke="#152233" stroke-width="1" stroke-dasharray="2 4"/><text x="40" y="73.0" font-size="9.5" fill="#4a5b73" text-anchor="end">12</text><line x1="50" y1="70.0" x2="670" y2="70.0" stroke="#152233" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="50.0" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">22</text><text x="132.7" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">26</text><text x="215.3" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">30</text><text x="318.7" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">5</text><text x="401.3" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">9</text><text x="484.0" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">13</text><text x="587.3" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">18</text><text x="670.0" y="242" font-size="9.5" fill="#4a5b73" text-anchor="middle">22</text>
+<text x="360" y="258" font-size="10" fill="#4a5b73" text-anchor="middle">Days</text>
+
+<g clip-path="url(#areaReveal)">
+<path d="M50.0 195.0 L70.7 220.0 L91.3 220.0 L112.0 220.0 L132.7 220.0 L153.3 220.0 L174.0 220.0 L194.7 220.0 L215.3 220.0 L236.0 220.0 L256.7 220.0 L277.3 220.0 L298.0 220.0 L318.7 220.0 L339.3 145.0 L360.0 220.0 L380.7 220.0 L401.3 220.0 L422.0 220.0 L442.7 220.0 L463.3 220.0 L484.0 220.0 L504.7 220.0 L525.3 220.0 L546.0 132.5 L566.7 220.0 L587.3 182.5 L608.0 220.0 L628.7 220.0 L649.3 82.5 L670.0 182.5 L670.0 220 L50.0 220 Z" fill="url(#areaGrad)"/>
+</g>
+<path d="M50.0 195.0 L70.7 220.0 L91.3 220.0 L112.0 220.0 L132.7 220.0 L153.3 220.0 L174.0 220.0 L194.7 220.0 L215.3 220.0 L236.0 220.0 L256.7 220.0 L277.3 220.0 L298.0 220.0 L318.7 220.0 L339.3 145.0 L360.0 220.0 L380.7 220.0 L401.3 220.0 L422.0 220.0 L442.7 220.0 L463.3 220.0 L484.0 220.0 L504.7 220.0 L525.3 220.0 L546.0 132.5 L566.7 220.0 L587.3 182.5 L608.0 220.0 L628.7 220.0 L649.3 82.5 L670.0 182.5" fill="none" stroke="#00d9ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+  stroke-dasharray="1128.6" stroke-dashoffset="1128.6">
+  <animate attributeName="stroke-dashoffset" from="1128.6" to="0" dur="2.4s" begin=".5s" fill="freeze" calcMode="spline" keySplines=".25 .7 .3 1"/>
+</path>
+
+<circle cx="50.0" cy="195.0" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="1.00s" fill="freeze"/></circle><circle cx="339.3" cy="145.0" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="2.03s" fill="freeze"/></circle><circle cx="546.0" cy="132.5" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="2.76s" fill="freeze"/></circle><circle cx="587.3" cy="182.5" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="2.91s" fill="freeze"/></circle><circle cx="649.3" cy="82.5" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="3.13s" fill="freeze"/></circle><circle cx="670.0" cy="182.5" r="0" fill="#00d9ff"><animate attributeName="r" from="0" to="3.4" dur=".01s" begin="3.20s" fill="freeze"/></circle>
+<circle class="pulse" cx="670.0" cy="182.5" r="3.4" fill="#a78bfa" opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur=".01s" begin="2.9s" fill="freeze"/>
+</circle>
+</svg>
