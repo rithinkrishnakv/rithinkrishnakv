@@ -72,26 +72,7 @@
 
 <div align="center">
 
-### ⚙️ Languages & Technologies
-
-<br/>
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-
-<br/>
-
-### 🛠️ Security Toolkit
-
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
-![Metasploit](https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
-![Nmap](https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logo=nmap&logoColor=white)
+<img src="./rithin-toolkit.svg" alt="Languages, technologies and security toolkit" width="640"/>
 
 </div>
 
@@ -101,7 +82,7 @@
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/rithinkrishnakv.vercel.app-00D9FF.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://rithinkrishnakv.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-00D9FF.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://rithinkrishnakv.vercel.app/)
 [![X](https://img.shields.io/badge/X-000000.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/RithinSec)
 [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@rithinkrishnakv)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rithin-krishna-k-v-15593b381/)
