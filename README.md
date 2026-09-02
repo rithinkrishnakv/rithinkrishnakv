@@ -95,8 +95,9 @@
 ---
 
 ## `$ cat activity_graph.log`
+
 <div align="center">
-<img width="640" src="https://github-readme-activity-graph.vercel.app/graph?username=rithinkrishnakv&theme=react-dark&bg_color=0D1B2A&color=00D9FF&line=00D9FF&point=ffffff&area=true&hide_border=true&custom_title=Rimu%27s%20Contribution%20Activity" alt="Rimu's contribution activity graph"/>
+<img width="640" src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
 </div>
 
 ---
