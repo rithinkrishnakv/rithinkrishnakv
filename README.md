@@ -87,21 +87,16 @@
 ---
 
 ## `$ git log --stat`
-
 <div align="center">
-
-<img src="./rithin-stats.svg" alt="GitHub contribution stats and top languages" width="640"/>
-
+<img height="180em" src="https://github-stats-extended.vercel.app/api?username=rithinkrishnakv&show_icons=true&theme=react&hide_border=true&bg_color=0D1B2A&title_color=00D9FF&icon_color=00D9FF&text_color=c9d1d9&ring_color=00D9FF" alt="Rithin's GitHub stats"/>
+<img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=rithinkrishnakv&layout=compact&hide_border=true&bg_color=0D1B2A&title_color=00D9FF&text_color=c9d1d9&langs_count=8" alt="Top Languages"/>
 </div>
 
 ---
 
 ## `$ cat activity_graph.log`
-
 <div align="center">
-
-<img src="./rithin-activity.svg" alt="Rimu's contribution activity graph" width="640"/>
-
+<img width="640" src="https://github-readme-activity-graph.vercel.app/graph?username=rithinkrishnakv&theme=react-dark&bg_color=0D1B2A&color=00D9FF&line=00D9FF&point=ffffff&area=true&hide_border=true&custom_title=Rimu%27s%20Contribution%20Activity" alt="Rimu's contribution activity graph"/>
 </div>
 
 ---
