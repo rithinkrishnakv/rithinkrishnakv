@@ -21,20 +21,8 @@
 </td>
 <td width="66%" valign="middle">
 
-### 🛠️ Deployed Tools
-
-| Tool | Stack | Focus |
-|:---|:---:|:---|
-| [**aegismimic**](https://github.com/rithinkrishnakv/aegismimic) | `Python` | Deception engine — honeypot directories with active camouflage |
-| [**appraisal-dex**](https://github.com/rithinkrishnakv/appraisal-dex) | `Python` | Android static analysis → auto-generated adb payloads & Frida agents |
-| [**jobless-router**](https://github.com/rithinkrishnakv/jobless-router) | `Python` | Real-time BGP threat intel — AS-path & RPKI validation |
-| [**vetod**](https://github.com/rithinkrishnakv/vetod) | `Python` | Fail-closed, scope-enforcing proxy for bug-bounty tooling |
-| [**mshwisper**](https://github.com/rithinkrishnakv/mshwisper) | `Rust` | Zero-config, encrypted LAN mesh chat — no server required |
-| [**godseye-ex**](https://github.com/rithinkrishnakv/godseye-ex) | `Python` | AST-based taint analysis for browser-extension RCE chains |
-
-<br/>
-
-> *"The quieter you become, the more you can hear — and the more vulnerabilities you can find."*
+<!-- Boot-sequence / status panel — a stylized identity motif, not a real telemetry feed -->
+<img src="./rithin-status.svg" alt="Operator status panel" width="100%"/>
 
 </td>
 </tr>
@@ -47,6 +35,21 @@
 <div align="center">
 
 <img src="./rithin-whoami.svg" alt="whoami terminal output" width="640"/>
+
+</div>
+
+---
+
+## `$ ./cyber_daily.sh`
+
+<div align="center">
+
+<!-- Auto-updated once a day by .github/workflows/update-cyberdaily.yml
+     Sources: CISA KEV, CISA advisories RSS, arXiv cs.CR, GitHub search API.
+     No LLM, no paid API — see scripts/generate_cyberdaily.py -->
+<img src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/cyberdaily.svg" alt="Daily cybersecurity brief" width="640"/>
+
+<sub>A tiny, honest news ticker — 1-2 CVEs, one threat advisory, one research paper, one tool, refreshed daily. Every line links back to its original source. <a href="./archive/cyberdaily.jsonl">Past briefs →</a></sub>
 
 </div>
 
@@ -72,6 +75,43 @@
 
 ---
 
+## `$ ls -la projects/ --sort=-stars`
+
+<div align="center">
+
+<img src="./rithin-projects.svg" alt="Deployed security tools" width="640"/>
+
+<br/>
+
+> *"The quieter you become, the more you can hear — and the more vulnerabilities you can find."*
+
+</div>
+
+---
+
+## `$ git log --stat`
+
+<div align="center">
+
+<!-- Auto-updated every 12h by .github/workflows/update-dashboard.yml
+     Real numbers via the GitHub GraphQL API — see scripts/generate_stats.py.
+     One self-hosted card instead of a third-party render service. -->
+<img src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/stats.svg" alt="Rithin's live GitHub statistics" width="640"/>
+
+</div>
+
+---
+
+## `$ cat activity_graph.log`
+
+<div align="center">
+
+<img width="640" src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
+
+</div>
+
+---
+
 ## `$ ./connect.sh`
 
 <div align="center">
@@ -84,28 +124,10 @@
 
 </div>
 
----
-
-## `$ git log --stat`
-<div align="center">
-<img height="180em" src="https://github-stats-extended.vercel.app/api?username=rithinkrishnakv&show_icons=true&theme=react&hide_border=true&bg_color=0D1B2A&title_color=00D9FF&icon_color=00D9FF&text_color=c9d1d9&ring_color=00D9FF" alt="Rithin's GitHub stats"/>
-<img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=rithinkrishnakv&layout=compact&hide_border=true&bg_color=0D1B2A&title_color=00D9FF&text_color=c9d1d9&langs_count=8" alt="Top Languages"/>
-</div>
-
----
-
-## `$ cat activity_graph.log`
-
-<div align="center">
-<img width="640" src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
-</div>
-
----
+<br/>
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,50:0D1B2A,100:0A0E1A&height=100&section=footer&fontSize=14&fontColor=00D9FF" alt="footer"/>
-
-*`"Security is not a product, but a process."` — Bruce Schneier*
+<img src="./rithin-footer.svg" alt="footer" width="100%"/>
 
 </div>

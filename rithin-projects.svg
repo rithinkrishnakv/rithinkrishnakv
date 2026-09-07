@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 502" width="700" height="502" role="img" aria-label="Deployed security tools">
+<defs>
+<style type="text/css"><![CDATA[
+text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+a{cursor:pointer}
+@keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+]]></style>
+</defs>
+<text x="20" y="24" font-size="12" letter-spacing="2" fill="#5b6b84">DEPLOYED TOOLS</text>
+
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.00s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/aegismimic" target="_blank">
+<rect x="20" y="54" width="320" height="132" rx="12" fill="#0d1424" stroke="#00d9ff" stroke-width="1.2" opacity=".95"/>
+<text x="38" y="82" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#00d9ff">$</tspan> aegismimic</text>
+<rect x="268.8" y="68" width="55.2" height="20" rx="10" fill="#0a0e1a" stroke="#00d9ff" stroke-width="1"/>
+<circle cx="281.8" cy="78" r="3.6" fill="#3572A5"/>
+<text x="290.8" y="82" font-size="10.5" fill="#c3d3e2">Python</text>
+<path d="M38 94 H322" stroke="#173350" stroke-width="1"/>
+<text x="38" y="118" font-size="11" fill="#a9c2d9">Deception engine — honeypot directories</text><text x="38" y="135" font-size="11" fill="#a9c2d9">with active camouflage</text>
+<text x="38" y="172" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.12s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/appraisal-dex" target="_blank">
+<rect x="360" y="54" width="320" height="132" rx="12" fill="#0d1424" stroke="#00d9ff" stroke-width="1.2" opacity=".95"/>
+<text x="378" y="82" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#00d9ff">$</tspan> appraisal-dex</text>
+<rect x="608.8" y="68" width="55.2" height="20" rx="10" fill="#0a0e1a" stroke="#00d9ff" stroke-width="1"/>
+<circle cx="621.8" cy="78" r="3.6" fill="#3572A5"/>
+<text x="630.8" y="82" font-size="10.5" fill="#c3d3e2">Python</text>
+<path d="M378 94 H662" stroke="#173350" stroke-width="1"/>
+<text x="378" y="118" font-size="11" fill="#a9c2d9">Android static analysis → auto-generated</text><text x="378" y="135" font-size="11" fill="#a9c2d9">adb payloads &amp; Frida agents</text>
+<text x="378" y="172" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.24s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/jobless-router" target="_blank">
+<rect x="20" y="202" width="320" height="132" rx="12" fill="#0d1424" stroke="#00d9ff" stroke-width="1.2" opacity=".95"/>
+<text x="38" y="230" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#00d9ff">$</tspan> jobless-router</text>
+<rect x="268.8" y="216" width="55.2" height="20" rx="10" fill="#0a0e1a" stroke="#00d9ff" stroke-width="1"/>
+<circle cx="281.8" cy="226" r="3.6" fill="#3572A5"/>
+<text x="290.8" y="230" font-size="10.5" fill="#c3d3e2">Python</text>
+<path d="M38 242 H322" stroke="#173350" stroke-width="1"/>
+<text x="38" y="266" font-size="11" fill="#a9c2d9">Real-time BGP threat intel — AS-path &amp;</text><text x="38" y="283" font-size="11" fill="#a9c2d9">RPKI validation</text>
+<text x="38" y="320" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.36s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/vetod" target="_blank">
+<rect x="360" y="202" width="320" height="132" rx="12" fill="#0d1424" stroke="#00d9ff" stroke-width="1.2" opacity=".95"/>
+<text x="378" y="230" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#00d9ff">$</tspan> vetod</text>
+<rect x="608.8" y="216" width="55.2" height="20" rx="10" fill="#0a0e1a" stroke="#00d9ff" stroke-width="1"/>
+<circle cx="621.8" cy="226" r="3.6" fill="#3572A5"/>
+<text x="630.8" y="230" font-size="10.5" fill="#c3d3e2">Python</text>
+<path d="M378 242 H662" stroke="#173350" stroke-width="1"/>
+<text x="378" y="266" font-size="11" fill="#a9c2d9">Fail-closed, scope-enforcing proxy for</text><text x="378" y="283" font-size="11" fill="#a9c2d9">bug-bounty tooling</text>
+<text x="378" y="320" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.48s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/mshwisper" target="_blank">
+<rect x="20" y="350" width="320" height="132" rx="12" fill="#0d1424" stroke="#a78bfa" stroke-width="1.2" opacity=".95"/>
+<text x="38" y="378" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#a78bfa">$</tspan> mshwisper</text>
+<rect x="283.2" y="364" width="40.8" height="20" rx="10" fill="#0a0e1a" stroke="#a78bfa" stroke-width="1"/>
+<circle cx="296.2" cy="374" r="3.6" fill="#dea584"/>
+<text x="305.2" y="378" font-size="10.5" fill="#c3d3e2">Rust</text>
+<path d="M38 390 H322" stroke="#173350" stroke-width="1"/>
+<text x="38" y="414" font-size="11" fill="#a9c2d9">Zero-config, encrypted LAN mesh chat —</text><text x="38" y="431" font-size="11" fill="#a9c2d9">no server required</text>
+<text x="38" y="468" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+<g opacity="0" style="animation:cardIn .6s cubic-bezier(.2,.8,.3,1) 0.60s forwards">
+<a xlink:href="https://github.com/rithinkrishnakv/godseye-ex" target="_blank">
+<rect x="360" y="350" width="320" height="132" rx="12" fill="#0d1424" stroke="#00d9ff" stroke-width="1.2" opacity=".95"/>
+<text x="378" y="378" font-size="14.5" fill="#e8edf5" font-weight="600"><tspan fill="#00d9ff">$</tspan> godseye-ex</text>
+<rect x="608.8" y="364" width="55.2" height="20" rx="10" fill="#0a0e1a" stroke="#00d9ff" stroke-width="1"/>
+<circle cx="621.8" cy="374" r="3.6" fill="#3572A5"/>
+<text x="630.8" y="378" font-size="10.5" fill="#c3d3e2">Python</text>
+<path d="M378 390 H662" stroke="#173350" stroke-width="1"/>
+<text x="378" y="414" font-size="11" fill="#a9c2d9">AST-based taint analysis for browser-</text><text x="378" y="431" font-size="11" fill="#a9c2d9">extension RCE chains</text>
+<text x="378" y="468" font-size="10" fill="#5b6b84">&#8594; view repo</text>
+</a>
+</g>
+</svg>

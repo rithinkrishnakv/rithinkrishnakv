@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-label="Footer">
+<defs>
+<style type="text/css"><![CDATA[
+text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@keyframes scrollWave{from{transform:translateX(0)}to{transform:translateX(-200px)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes dotPulse{0%,100%{opacity:.5;r:2.4}50%{opacity:1;r:3.4}}
+.wave{animation:scrollWave 6s linear infinite}
+.dot{animation:dotPulse 2.4s ease-in-out infinite}
+]]></style>
+<linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#00d9ff" stop-opacity="0"/>
+<stop offset="15%" stop-color="#00d9ff" stop-opacity=".55"/>
+<stop offset="50%" stop-color="#a78bfa" stop-opacity=".55"/>
+<stop offset="85%" stop-color="#00d9ff" stop-opacity=".55"/>
+<stop offset="100%" stop-color="#00d9ff" stop-opacity="0"/>
+</linearGradient>
+</defs>
+
+<g>
+<path class="wave" d="M-200,90.0 L-190,91.85 L-180,93.53 L-170,94.85 L-160,95.71 L-150,96.0 L-140,95.71 L-130,94.85 L-120,93.53 L-110,91.85 L-100,90.0 L-90,88.15 L-80,86.47 L-70,85.15 L-60,84.29 L-50,84.0 L-40,84.29 L-30,85.15 L-20,86.47 L-10,88.15 L0,90.0 L10,91.85 L20,93.53 L30,94.85 L40,95.71 L50,96.0 L60,95.71 L70,94.85 L80,93.53 L90,91.85 L100,90.0 L110,88.15 L120,86.47 L130,85.15 L140,84.29 L150,84.0 L160,84.29 L170,85.15 L180,86.47 L190,88.15 L200,90.0 L210,91.85 L220,93.53 L230,94.85 L240,95.71 L250,96.0 L260,95.71 L270,94.85 L280,93.53 L290,91.85 L300,90.0 L310,88.15 L320,86.47 L330,85.15 L340,84.29 L350,84.0 L360,84.29 L370,85.15 L380,86.47 L390,88.15 L400,90.0 L410,91.85 L420,93.53 L430,94.85 L440,95.71 L450,96.0 L460,95.71 L470,94.85 L480,93.53 L490,91.85 L500,90.0 L510,88.15 L520,86.47 L530,85.15 L540,84.29 L550,84.0 L560,84.29 L570,85.15 L580,86.47 L590,88.15 L600,90.0 L610,91.85 L620,93.53 L630,94.85 L640,95.71 L650,96.0 L660,95.71 L670,94.85 L680,93.53 L690,91.85 L700,90.0 L710,88.15 L720,86.47 L730,85.15 L740,84.29 L750,84.0 L760,84.29 L770,85.15 L780,86.47 L790,88.15 L800,90.0 L810,91.85 L820,93.53 L830,94.85 L840,95.71 L850,96.0 L860,95.71 L870,94.85 L880,93.53 L890,91.85 L900,90.0 L910,88.15 L920,86.47 L930,85.15 L940,84.29 L950,84.0 L960,84.29 L970,85.15 L980,86.47 L990,88.15 L1000,90.0 L1010,91.85 L1020,93.53 L1030,94.85 L1040,95.71 L1050,96.0 L1060,95.71 L1070,94.85 L1080,93.53 L1090,91.85 L1100,90.0 L1110,88.15 L1120,86.47 L1130,85.15 L1140,84.29 L1150,84.0 L1160,84.29 L1170,85.15 L1180,86.47 L1190,88.15 L1200,90.0 L1210,91.85 L1220,93.53 L1230,94.85 L1240,95.71 L1250,96.0 L1260,95.71 L1270,94.85 L1280,93.53 L1290,91.85 L1300,90.0 L1310,88.15 L1320,86.47 L1330,85.15 L1340,84.29 L1350,84.0 L1360,84.29 L1370,85.15 L1380,86.47 L1390,88.15 L1400,90.0" fill="none" stroke="url(#waveGrad)" stroke-width="1.6"/>
+</g>
+
+<g stroke="#173350" stroke-width="1.4" fill="none" opacity=".7">
+<path d="M60 20 V8 H120"/>
+<path d="M1140 20 V8 H1080"/>
+</g>
+
+<circle class="dot" cx="390.0" cy="46" r="2.8" fill="#00d9ff"/>
+<g opacity="0" style="animation:fadeIn .9s ease .3s forwards">
+<text x="600.0" y="52" text-anchor="middle" font-size="14" fill="#c3d3e2">"Security is not a product, but a process."</text>
+<text x="600.0" y="72" text-anchor="middle" font-size="11" fill="#4a5b73" letter-spacing="1">&#8212; Bruce Schneier</text>
+</g>
+<circle class="dot" cx="810.0" cy="46" r="2.8" fill="#a78bfa" style="animation-delay:1.2s"/>
+
+<text x="600.0" y="106" text-anchor="middle" font-size="9.5" letter-spacing="3" fill="#2c3d54">// RITHINKRISHNAKV // END OF README</text>
+</svg>

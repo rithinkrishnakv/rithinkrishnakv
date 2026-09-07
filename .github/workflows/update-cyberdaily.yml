@@ -1,0 +1,85 @@
+name: Update Cyber Daily Brief
+
+# Generates the compact "CYBER // DAILY" card once a day from free/public
+# sources (CISA KEV, CISA advisories RSS, arXiv cs.CR RSS, GitHub search) —
+# see scripts/generate_cyberdaily.py for the source list and reasoning.
+# No LLM and no paid API is used anywhere in this pipeline.
+#
+# Two things get published on every successful run:
+#   - dist/cyberdaily.svg           -> committed to the `output` branch
+#   - archive/cyberdaily.jsonl      -> committed to `main` (a rolling,
+#     capped-length log of past daily briefs — see ARCHIVE_MAX_LINES in
+#     the script)
+#
+# Publishing to `output` is a surgical git commit against a checkout of
+# just that branch (not a mirror deploy) so this workflow and
+# update-dashboard.yml — which also writes to `output` on its own
+# 12-hour schedule — never stomp on each other's files.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: output-branch-cyberdaily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main (scripts + archive)
+        uses: actions/checkout@v6
+        with:
+          path: main
+
+      - name: Checkout output branch (publish target)
+        uses: actions/checkout@v6
+        with:
+          ref: output
+          path: output
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Generate Cyber Daily brief
+        env:
+          # Only used to raise the GitHub search-API rate limit — no extra
+          # scopes and no secret to create, the default token is enough.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 main/scripts/generate_cyberdaily.py \
+            --svg output/cyberdaily.svg \
+            --archive main/archive/cyberdaily.jsonl
+
+      - name: Publish brief to output branch
+        working-directory: output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed — skipping commit."
+          else
+            git commit -m "chore: cyber daily brief $(date -u +%F)"
+            git push
+          fi
+
+      - name: Commit archive to main branch
+        working-directory: main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/cyberdaily.jsonl
+          if git diff --cached --quiet; then
+            echo "Nothing changed — skipping commit."
+          else
+            git commit -m "chore: archive cyber daily brief $(date -u +%F)"
+            git push
+          fi

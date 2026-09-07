@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240" width="700" height="240" role="img" aria-label="Operator status panel">
+<defs>
+<style type="text/css"><![CDATA[
+text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes dotPulse{0%,100%{opacity:.5;r:3}50%{opacity:1;r:4.2}}
+@keyframes ping{0%{opacity:.6;r:5}100%{opacity:0;r:16}}
+.cursor{animation:blink 1s step-start infinite}
+.dot{animation:dotPulse 2.2s ease-in-out infinite}
+.ping{animation:ping 2.2s cubic-bezier(.2,.7,.3,1) infinite}
+]]></style>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#0d1420"/><stop offset="100%" stop-color="#080c14"/>
+</linearGradient>
+<linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#a78bfa;#00d9ff" dur="10s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#00d9ff;#a78bfa" dur="10s" repeatCount="indefinite"/></stop>
+</linearGradient>
+<clipPath id="l0"><rect x="44" y="50" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".2s" fill="freeze"/></rect></clipPath>
+<clipPath id="l1"><rect x="44" y="74" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".55s" fill="freeze"/></rect></clipPath>
+<clipPath id="l2"><rect x="44" y="98" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".90s" fill="freeze"/></rect></clipPath>
+<clipPath id="l3"><rect x="44" y="122" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin="1.25s" fill="freeze"/></rect></clipPath>
+</defs>
+
+<rect width="700" height="240" rx="16" fill="url(#bg)"/>
+<rect width="700" height="240" rx="16" fill="none" stroke="url(#border)" stroke-width="1.6"/>
+
+<circle cx="30" cy="24" r="3" fill="#3d5872"/>
+<circle cx="42" cy="24" r="3" fill="#516781"/>
+<circle cx="54" cy="24" r="3" fill="#7dd3fc"/>
+<text x="70" y="28" font-size="10.5" fill="#3d5872" letter-spacing="1">rimu@kali: ~/status.sh</text>
+<path d="M20 38 H680" stroke="#173350" stroke-width="1"/>
+
+<g clip-path="url(#l0)"><text x="46" y="63" font-size="13.5" fill="#5b6b84">[<tspan fill="#00d9ff">ok</tspan>] loading operator_profile ......... done</text></g>
+<g clip-path="url(#l1)"><text x="46" y="87" font-size="13.5" fill="#5b6b84">[<tspan fill="#00d9ff">ok</tspan>] mounting security_toolkit ......... done</text></g>
+<g clip-path="url(#l2)"><text x="46" y="111" font-size="13.5" fill="#5b6b84">[<tspan fill="#00d9ff">ok</tspan>] initializing recon_modules ......... done</text></g>
+<g clip-path="url(#l3)"><text x="46" y="135" font-size="13.5" fill="#a78bfa" font-weight="700">[status] SECURITY_OPERATIONS: ONLINE</text></g>
+
+<g opacity="0" style="animation:fadeIn .01s ease 1.65s forwards">
+<rect class="cursor" x="46" y="145" width="8" height="15" fill="#00d9ff"/>
+</g>
+
+<path d="M40 168 H660" stroke="#173350" stroke-width="1"/>
+
+<g opacity="0" style="animation:fadeIn .55s cubic-bezier(.2,.8,.3,1) 1.85s forwards">
+<circle class="dot" cx="52" cy="195" r="3.4" fill="#00d9ff"/>
+<circle class="ping" cx="52" cy="195" r="5" fill="none" stroke="#00d9ff" stroke-width="1.2"/>
+<text x="64" y="193" font-size="9.5" letter-spacing="1" fill="#3d5872">MODE</text>
+<text x="64" y="207" font-size="12.5" fill="#dbe7f2">Offensive Security Research</text>
+</g>
+
+<g opacity="0" style="animation:fadeIn .55s cubic-bezier(.2,.8,.3,1) 2.05s forwards">
+<circle class="dot" cx="292" cy="195" r="3.4" fill="#a78bfa" style="animation-delay:.5s"/>
+<text x="304" y="193" font-size="9.5" letter-spacing="1" fill="#3d5872">FOCUS</text>
+<text x="304" y="207" font-size="12.5" fill="#dbe7f2">VAPT &#183; OSINT &#183; Android &#183; Web</text>
+</g>
+
+<g opacity="0" style="animation:fadeIn .55s cubic-bezier(.2,.8,.3,1) 2.25s forwards">
+<circle class="dot" cx="562" cy="195" r="3.4" fill="#00d9ff" style="animation-delay:1s"/>
+<text x="574" y="193" font-size="9.5" letter-spacing="1" fill="#3d5872">BASE</text>
+<text x="574" y="207" font-size="12.5" fill="#dbe7f2">Kerala, IN</text>
+</g>
+</svg>

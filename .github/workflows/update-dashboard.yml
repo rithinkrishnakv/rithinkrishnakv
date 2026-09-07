@@ -1,0 +1,80 @@
+name: Update Dashboard (Stats + Activity Graph)
+
+# Regenerates the two GitHub-data-driven cards used in the README:
+#   - dist/stats.svg           (contributions/streaks/top languages — scripts/generate_stats.py)
+#   - dist/activity-graph.svg  (contribution activity graph — maurodesouza's action)
+#
+# Both are committed straight to the `output` branch, which the README loads
+# via raw.githubusercontent.com. Publishing is a plain `git add/commit/push`
+# against a checkout of just that branch (see the last step) rather than a
+# "mirror" deploy action, on purpose: this workflow and update-cyberdaily.yml
+# both write to `output`, and a mirror-style deploy would make whichever one
+# runs second wipe out the other's file.
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: output-branch-dashboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      STATS_TOKEN_SET: ${{ secrets.STATS_TOKEN != '' }}
+
+    steps:
+      - name: Checkout main (for scripts)
+        uses: actions/checkout@v6
+        with:
+          path: main
+
+      - name: Checkout output branch (publish target)
+        uses: actions/checkout@v6
+        with:
+          ref: output
+          path: output
+
+      - name: Generate contribution activity graph
+        uses: maurodesouza/github-readme-activity-graph-action@v1
+        with:
+          username: rithinkrishnakv
+          options: theme=react-dark&bg_color=0D1B2A&color=00D9FF&line=00D9FF&point=ffffff&area=true&hide_border=true
+          output_path: output/activity-graph.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        if: ${{ env.STATS_TOKEN_SET == 'true' }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Generate stats dashboard
+        # Skips cleanly (no red X) until STATS_TOKEN is added as a repo
+        # secret — see README > Manual setup. continue-on-error is a second
+        # safety net so a transient API hiccup never blocks the activity
+        # graph from publishing.
+        if: ${{ env.STATS_TOKEN_SET == 'true' }}
+        continue-on-error: true
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          STATS_USERNAME: rithinkrishnakv
+        run: python3 main/scripts/generate_stats.py output/stats.svg
+
+      - name: Publish changed files to output branch
+        working-directory: output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed — skipping commit."
+          else
+            git commit -m "chore: update dashboard $(date -u +%F)"
+            git push
+          fi
