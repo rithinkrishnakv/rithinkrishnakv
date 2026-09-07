@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 188" width="700" height="188" role="img" aria-label="Daily cybersecurity brief">
+<defs>
+<style type="text/css"><![CDATA[
+text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@keyframes rowIn{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:translateX(0)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.cursor{animation:blink 1s step-start infinite}
+]]></style>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#0d1420"/><stop offset="100%" stop-color="#080c14"/>
+</linearGradient>
+<linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#a78bfa;#00d9ff" dur="10s" repeatCount="indefinite"/></stop>
+<stop offset="100%" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#00d9ff;#a78bfa" dur="10s" repeatCount="indefinite"/></stop>
+</linearGradient>
+</defs>
+
+<rect width="700" height="188" rx="16" fill="url(#bg)"/>
+<rect width="700" height="188" rx="16" fill="none" stroke="url(#border)" stroke-width="1.6"/>
+
+<circle cx="30" cy="24" r="3" fill="#3d5872"/>
+<circle cx="42" cy="24" r="3" fill="#516781"/>
+<circle cx="54" cy="24" r="3" fill="#7dd3fc"/>
+<text x="70" y="28" font-size="10.5" fill="#3d5872" letter-spacing="1">rimu@kali: ~/cyber_daily.sh</text>
+<path d="M20 38 H680" stroke="#173350" stroke-width="1"/>
+
+<text x="40" y="58" font-size="12.5" fill="#00d9ff" font-weight="700">CYBER // DAILY</text>
+<text x="660" y="58" text-anchor="end" font-size="11" fill="#5b6b84">📅 2026-09-07</text>
+<rect x="46" y="49" width="8" height="14" fill="#00d9ff" class="cursor" opacity=".85"/>
+
+<g opacity="0" style="animation:rowIn .5s ease 0.00s forwards"><a xlink:href="https://nvd.nist.gov/vuln/detail/CVE-2026-85046" target="_blank"><text x="40" y="74" font-size="14">🔴</text><text x="66" y="73" font-size="9.5" letter-spacing="1.2" fill="#5b6b84">CVE 1</text><text x="66" y="88" font-size="12" fill="#dbe7f2">CVE-2026-85046 — Google Chromium V8 Type Confusion Vulnerability</text></a></g><g opacity="0" style="animation:rowIn .5s ease 0.15s forwards"><a xlink:href="https://nvd.nist.gov/vuln/detail/CVE-2026-59822" target="_blank"><text x="40" y="104" font-size="14">🔴</text><text x="66" y="103" font-size="9.5" letter-spacing="1.2" fill="#5b6b84">CVE 2</text><text x="66" y="118" font-size="12" fill="#dbe7f2">CVE-2026-59822 — BerriAI LiteLLM Improper Authentication Vulnerability</text></a></g><g opacity="0" style="animation:rowIn .5s ease 0.30s forwards"><a xlink:href="https://github.com/2akouwu/reverify" target="_blank"><text x="40" y="134" font-size="14">🧰</text><text x="66" y="133" font-size="9.5" letter-spacing="1.2" fill="#5b6b84">TOOL</text><text x="66" y="148" font-size="12" fill="#dbe7f2">2akouwu/reverify — Stop your AI from making things up — it proposes, determin…</text></a></g>
+
+<text x="660" y="174" font-size="8.5" fill="#2c3d54" text-anchor="end">sources linked • auto-updated daily</text>
+</svg>
