@@ -54,7 +54,7 @@ ARCHIVE_MAX_LINES = 365  # ~1 year of daily entries, then oldest roll off
 RECENT_WINDOW_DAYS = 10  # items seen within this many days are treated as "recent"
 GITHUB_CANDIDATES = 15   # fetch this many repos so we can rotate among them
 
-UA = {"User-Agent": "rithinkrishnakv-cyberdaily-bot/1.0"}
+UA = {"User-Agent": "rithinkrishnakv-cyberdaily-bot/1.0 (+https://github.com/rithinkrishnakv)"}
 
 
 def http_get(url: str, headers: dict | None = None, timeout: int = 20) -> bytes:
@@ -85,7 +85,6 @@ def load_archive(path: str) -> list[dict]:
                     if isinstance(obj, dict) and "date" in obj:
                         records.append(obj)
                 except (json.JSONDecodeError, TypeError, ValueError):
-                    # skip malformed lines; do not crash
                     continue
     except OSError as exc:
         print(f"warn: could not read archive {path}: {exc}", file=sys.stderr)
@@ -124,7 +123,7 @@ def recent_cve_ids(archive: list[dict], window_days: int, today: datetime.date) 
 
 
 def recent_urls(archive: list[dict], window_days: int, today: datetime.date, key: str) -> set[str]:
-    """Collect urls (and normalized labels) seen recently for threat / research / tool."""
+    """Collect urls (and labels) seen recently for threat / research / tool."""
     urls: set[str] = set()
     for rec in recent_records(archive, window_days, today):
         item = rec.get(key)
@@ -133,7 +132,6 @@ def recent_urls(archive: list[dict], window_days: int, today: datetime.date, key
         u = (item.get("url") or "").strip()
         if u:
             urls.add(u)
-        # also remember label as a secondary signal
         lab = (item.get("label") or "").strip()
         if lab:
             urls.add(lab)
@@ -147,7 +145,6 @@ def fetch_cves(used_ids: set[str] | None = None) -> list[dict]:
     try:
         data = json.loads(http_get(KEV_URL))
         vulns = data.get("vulnerabilities", [])
-        # newest first
         vulns.sort(key=lambda v: v.get("dateAdded", ""), reverse=True)
 
         def to_item(v: dict) -> dict | None:
@@ -161,7 +158,6 @@ def fetch_cves(used_ids: set[str] | None = None) -> list[dict]:
                 "url": f"https://nvd.nist.gov/vuln/detail/{cve_id}",
             }
 
-        # Pass 1: fresh candidates (not in recent window)
         fresh: list[dict] = []
         for v in vulns:
             item = to_item(v)
@@ -173,7 +169,6 @@ def fetch_cves(used_ids: set[str] | None = None) -> list[dict]:
         if len(fresh) >= MAX_CVES:
             return fresh
 
-        # Pass 2: fill remaining slots with newest overall (may reuse older ones)
         seen = {c["id"] for c in fresh}
         for v in vulns:
             item = to_item(v)
@@ -183,13 +178,17 @@ def fetch_cves(used_ids: set[str] | None = None) -> list[dict]:
                 if len(fresh) >= MAX_CVES:
                     break
         return fresh
-    except Exception as exc:  # noqa: BLE001 - a bad source should degrade, not crash
+    except Exception as exc:  # noqa: BLE001
         print(f"warn: KEV fetch failed: {exc}", file=sys.stderr)
         return []
 
 
 # --------------------------------------------------------- Threat (CISA RSS)
 def parse_rss_items(xml_bytes: bytes) -> list[dict]:
+    # Reject HTML error pages (CISA sometimes returns 403 HTML)
+    head = xml_bytes[:200].lstrip().lower()
+    if head.startswith(b"<!doctype") or head.startswith(b"<html"):
+        raise ValueError("received HTML instead of RSS/XML")
     root = ET.fromstring(xml_bytes)
     items = []
     for item in root.iter("item"):
@@ -210,14 +209,12 @@ def fetch_threat(used: set[str] | None = None) -> dict | None:
         if not items:
             return None
 
-        # Prefer first unused item (RSS is newest-first)
         for it in items:
             label = truncate(it["title"], 78)
             url = it["link"]
             if url not in used and label not in used:
                 return {"label": label, "url": url}
 
-        # Fallback: newest available
         top = items[0]
         return {"label": truncate(top["title"], 78), "url": top["link"]}
     except Exception as exc:  # noqa: BLE001
@@ -244,7 +241,6 @@ def fetch_research(used: set[str] | None = None) -> dict | None:
             if url not in used and label not in used:
                 return {"label": label, "url": url}
 
-        # Fallback: newest
         top = items[0]
         title = _ARXIV_SUFFIX_RE.sub("", top["title"]).strip()
         return {"label": truncate(title, 78), "url": top["link"]}
@@ -292,7 +288,7 @@ def fetch_tool(token: str | None, used: set[str] | None = None) -> dict | None:
                     }
                 )
             if candidates:
-                break  # good enough pool from this query
+                break
         except Exception as exc:  # noqa: BLE001
             print(f"warn: GitHub search failed for '{q}': {exc}", file=sys.stderr)
             continue
@@ -300,12 +296,10 @@ def fetch_tool(token: str | None, used: set[str] | None = None) -> dict | None:
     if not candidates:
         return None
 
-    # Prefer unused
     for c in candidates:
         if c["url"] not in used and c["label"] not in used and c["full_name"] not in used:
             return {"label": c["label"], "url": c["url"]}
 
-    # Fallback: highest-starred (first in list)
     top = candidates[0]
     return {"label": top["label"], "url": top["url"]}
 
@@ -395,15 +389,13 @@ def update_archive(path: str, record: dict) -> None:
         except OSError as exc:
             print(f"warn: could not read archive for update: {exc}", file=sys.stderr)
 
-    # Remove any existing entry for the same date
     kept: list[str] = []
     for ln in lines:
         try:
             obj = json.loads(ln)
             if isinstance(obj, dict) and obj.get("date") == date_str:
-                continue  # drop old same-day record
+                continue
         except (json.JSONDecodeError, TypeError, ValueError):
-            # keep malformed lines as-is so we don't destroy data
             kept.append(ln)
             continue
         kept.append(ln)
@@ -427,14 +419,12 @@ def main() -> None:
     today = datetime.date.today()
     date_str = today.isoformat()
 
-    # 1. Load historical state
     archive = load_archive(args.archive)
     used_cve_ids = recent_cve_ids(archive, RECENT_WINDOW_DAYS, today)
     used_threat = recent_urls(archive, RECENT_WINDOW_DAYS, today, "threat")
     used_research = recent_urls(archive, RECENT_WINDOW_DAYS, today, "research")
     used_tool = recent_urls(archive, RECENT_WINDOW_DAYS, today, "tool")
 
-    # 2. Fetch with rotation (fresh preferred, graceful fallback)
     cves = fetch_cves(used_cve_ids)
     threat = fetch_threat(used_threat)
     research = fetch_research(used_research)
