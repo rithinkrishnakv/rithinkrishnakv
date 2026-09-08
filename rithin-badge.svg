@@ -71,7 +71,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <circle cx="200" cy="272" r="14" fill="none" stroke="url(#metal)" stroke-width="5.5"/>
 
   <g class="wob">
-  <rect x="62" y="298" width="276" height="442" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="298" width="276" height="430" rx="20" fill="url(#cardGrad)" stroke="url(#cardBorder)" stroke-width="2" filter="url(#cardShadow)"/>
   <rect x="62" y="298" width="276" height="34" rx="20" fill="#13253a" opacity=".8"/>
   <rect x="62" y="314" width="276" height="18" fill="#13253a" opacity=".8"/>
   <text x="78" y="320" font-size="9" fill="#5b6b84" letter-spacing="1.5">ACCESS BADGE</text>
@@ -115,11 +115,11 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
   <rect x="94" y="506" width="212" height="9" rx="4.5" fill="#16273a"/>
   <g clip-path="url(#barBar)"><rect x="94" y="506" width="212" height="9" rx="4.5" fill="url(#nameGrad2)"/></g>
 
-  <text x="200" y="542" text-anchor="middle" font-size="17" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
-  <text x="200" y="562" text-anchor="middle" font-size="12" fill="url(#violetGrad)" letter-spacing="3">RIMU</text>
-  <text x="200" y="581" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
+  <text x="200" y="538" text-anchor="middle" font-size="17" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
+  <text x="200" y="556" text-anchor="middle" font-size="12" fill="url(#violetGrad)" letter-spacing="3">RIMU</text>
+  <text x="200" y="574" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
 
-  <rect x="94" y="595" width="212" height="1" fill="#1b2f47"/>
+  <rect x="94" y="588" width="212" height="1" fill="#1b2f47"/>
 
   <g opacity="0" style="animation:fadeIn .7s ease 4.6s forwards" font-size="10.5" fill="#a9c2d9" letter-spacing=".3">
     <g stroke="#00d9ff" stroke-width="1.2" fill="none" stroke-linecap="round">
