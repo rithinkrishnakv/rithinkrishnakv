@@ -47,7 +47,7 @@
 <!-- Auto-updated once a day by .github/workflows/update-cyberdaily.yml
      Sources: CISA KEV, CISA advisories RSS, arXiv cs.CR, GitHub search API.
      No LLM, no paid API — see scripts/generate_cyberdaily.py -->
-<img src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/cyberdaily.svg" alt="Daily cybersecurity brief" width="640"/>
+<img src="https://github.com/rithinkrishnakv/rithinkrishnakv/raw/refs/heads/output/cyberdaily.svg" alt="Daily cybersecurity brief" width="640"/>
 
 <sub>A tiny, honest news ticker — 1-2 CVEs, one threat advisory, one research paper, one tool, refreshed daily. Every line links back to its original source. <a href="./archive/cyberdaily.jsonl">Past briefs →</a></sub>
 
@@ -96,7 +96,7 @@
 <!-- Auto-updated every 12h by .github/workflows/update-dashboard.yml
      Real numbers via the GitHub GraphQL API — see scripts/generate_stats.py.
      One self-hosted card instead of a third-party render service. -->
-<img src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/stats.svg" alt="Rithin's live GitHub statistics" width="640"/>
+<img src="https://github.com/rithinkrishnakv/rithinkrishnakv/raw/refs/heads/output/stats.svg" alt="Rithin's live GitHub statistics" width="640"/>
 
 </div>
 
@@ -106,7 +106,7 @@
 
 <div align="center">
 
-<img width="640" src="https://raw.githubusercontent.com/rithinkrishnakv/rithinkrishnakv/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
+<img width="640" src="https://github.com/rithinkrishnakv/rithinkrishnakv/raw/refs/heads/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
 
 </div>
 
