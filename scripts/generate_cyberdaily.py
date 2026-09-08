@@ -364,7 +364,7 @@ text{{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}}
 
 <text x="40" y="58" font-size="12.5" fill="#00d9ff" font-weight="700">CYBER // DAILY</text>
 <text x="660" y="58" text-anchor="end" font-size="11" fill="#5b6b84">\U0001F4C5 {esc(date_str)}</text>
-<rect x="46" y="49" width="8" height="14" fill="#00d9ff" class="cursor" opacity=".85"/>
+<rect x="168" y="49" width="8" height="14" fill="#00d9ff" class="cursor" opacity=".85"/>
 
 {''.join(row_svg)}
 
