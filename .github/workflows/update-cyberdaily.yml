@@ -9,12 +9,15 @@ name: Update Cyber Daily Brief
 #   - cyberdaily.svg                -> committed to the `output` branch
 #   - archive/cyberdaily.jsonl      -> committed to `main` (rolling log)
 #
-# This workflow and update-dashboard.yml both publish to the `output`
-# branch, so they share the `output-branch-publish` concurrency group below
-# rather than relying on "surgical commits" to avoid collisions — two jobs
+# This workflow publishes to BOTH `output` (cyberdaily.svg) and `main`
+# (the archive), and update-dashboard.yml also publishes to `output`. All
+# of that shares the `profile-automation-publish` concurrency group below
+# rather than relying on "surgical commits" to avoid collisions — two runs
 # checking out the same branch and pushing independently can race each
-# other's push no matter how disjoint their file changes are. Sharing a
-# concurrency group makes GitHub Actions queue them instead of racing.
+# other's push no matter how disjoint their file changes are. Because the
+# group is applied at the workflow level, it covers this entire run start
+# to finish, so the main-branch archive commit below is serialized against
+# other runs too, not just the output-branch publish step.
 
 on:
   schedule:
@@ -22,7 +25,18 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: output-branch-publish
+  # Shared with update-dashboard.yml on purpose. This gates the ENTIRE run
+  # of whichever workflow triggers, not just one step — so the main-branch
+  # archive commit later in THIS job is covered by the same lock as the
+  # output-branch publish step, without needing a second concurrency group.
+  # cancel-in-progress: false means a second run QUEUES behind the first
+  # instead of canceling it, so an archive update never gets silently
+  # dropped because another run started first.
+  #
+  # Any future workflow that pushes to `output` OR to `main` in this repo
+  # must join this same group, or it reintroduces exactly the race this
+  # was added to close.
+  group: profile-automation-publish
   cancel-in-progress: false
 
 jobs:
@@ -33,8 +47,13 @@ jobs:
 
     steps:
       - name: Checkout main (scripts + archive)
+        # Explicit ref, deliberately not left to default to github.ref: a
+        # workflow_dispatch can be run against any branch, and this
+        # workflow must always read/publish from the real main branch, not
+        # whatever branch happened to be selected for a manual run.
         uses: actions/checkout@v6
         with:
+          ref: main
           path: main
 
       - name: Checkout output branch (publish target)
@@ -50,8 +69,9 @@ jobs:
 
       - name: Diagnostics — before generation
         run: |
-          echo "main branch:   ${{ github.ref_name }} @ $(git -C main rev-parse HEAD)"
-          echo "output branch: output @ $(git -C output rev-parse HEAD)"
+          echo "workflow triggered from ref: ${{ github.ref_name }} (event: ${{ github.event_name }})"
+          echo "main checkout is pinned to:  main @ $(git -C main rev-parse HEAD)"
+          echo "output checkout is pinned to: output @ $(git -C output rev-parse HEAD)"
 
       - name: Generate Cyber Daily brief
         env:

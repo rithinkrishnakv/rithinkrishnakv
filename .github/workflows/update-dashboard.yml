@@ -11,13 +11,14 @@ name: Update Dashboard (Stats + Activity Graph)
 # this one on every run and has been removed. This is now the one and only
 # workflow that touches either file.
 #
-# This workflow and update-cyberdaily.yml both publish to the `output`
-# branch, so they share the `output-branch-publish` concurrency group below
-# instead of relying on "surgical commits" to avoid collisions. Two jobs
+# This workflow and update-cyberdaily.yml both publish to this repo (this
+# one only to `output`; update-cyberdaily.yml to `output` AND `main`), so
+# they share the `profile-automation-publish` concurrency group below
+# instead of relying on "surgical commits" to avoid collisions. Two runs
 # cannot safely check out the same branch, edit disjoint files, and push
 # independently without one of them racing the other's push — sharing a
-# concurrency group makes GitHub Actions queue them instead of running them
-# in parallel.
+# concurrency group makes GitHub Actions queue runs instead of racing them,
+# for the whole run, not just the step that happens to touch `output`.
 
 on:
   schedule:
@@ -25,7 +26,18 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: output-branch-publish
+  # This gates the ENTIRE run (every step, start to finish) of whichever
+  # workflow triggers — not just the "push to output" step. That matters
+  # because update-cyberdaily.yml's run, using this same group, also
+  # commits to `main` (the archive) later in its job; that main-branch
+  # commit is covered by this same lock, not left to race separately.
+  # cancel-in-progress: false means a second run QUEUES behind the first
+  # instead of canceling it, so nothing gets silently dropped.
+  #
+  # Any future workflow that pushes to `output` OR to `main` in this repo
+  # must join this same group, or it reintroduces exactly the race this
+  # was added to close.
+  group: profile-automation-publish
   cancel-in-progress: false
 
 jobs:
@@ -36,8 +48,13 @@ jobs:
 
     steps:
       - name: Checkout main (scripts)
+        # Explicit ref, deliberately not left to default to github.ref: a
+        # workflow_dispatch can be run against any branch, and this
+        # workflow must always read/publish from the real main branch, not
+        # whatever branch happened to be selected for a manual run.
         uses: actions/checkout@v6
         with:
+          ref: main
           path: main
 
       - name: Checkout output branch (publish target)
@@ -53,8 +70,9 @@ jobs:
 
       - name: Diagnostics — before generation
         run: |
-          echo "main branch:   ${{ github.ref_name }} @ $(git -C main rev-parse HEAD)"
-          echo "output branch: output @ $(git -C output rev-parse HEAD)"
+          echo "workflow triggered from ref: ${{ github.ref_name }} (event: ${{ github.event_name }})"
+          echo "main checkout is pinned to:  main @ $(git -C main rev-parse HEAD)"
+          echo "output checkout is pinned to: output @ $(git -C output rev-parse HEAD)"
           echo "STATS_TOKEN secret configured: ${{ secrets.STATS_TOKEN != '' }}"
           echo "(if false, the script falls back to the default GITHUB_TOKEN — that's expected, not an error)"
 
