@@ -106,6 +106,10 @@
 
 <div align="center">
 
+<!-- Auto-updated every 12h by .github/workflows/update-dashboard.yml
+     Same GitHub GraphQL fetch as the stats card above (see
+     scripts/generate_stats.py) — rendered locally, not by a third-party
+     Action, so the two cards can't disagree. -->
 <img width="640" src="https://github.com/rithinkrishnakv/rithinkrishnakv/raw/refs/heads/output/activity-graph.svg" alt="Rithin's contribution activity graph"/>
 
 </div>
