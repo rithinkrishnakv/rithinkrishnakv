@@ -1,15 +1,23 @@
 name: Update Dashboard (Stats + Activity Graph)
 
 # Regenerates the two GitHub-data-driven cards used in the README:
-#   - dist/stats.svg           (contributions/streaks/top languages — scripts/generate_stats.py)
-#   - dist/activity-graph.svg  (contribution activity graph — maurodesouza's action)
+#   - stats.svg           (contributions/streaks/top languages)
+#   - activity-graph.svg  (52-week contribution activity chart)
 #
-# Both are committed straight to the `output` branch, which the README loads
-# via raw.githubusercontent.com. Publishing is a plain `git add/commit/push`
-# against a checkout of just that branch (see the last step) rather than a
-# "mirror" deploy action, on purpose: this workflow and update-cyberdaily.yml
-# both write to `output`, and a mirror-style deploy would make whichever one
-# runs second wipe out the other's file.
+# Both are rendered by scripts/generate_stats.py from a SINGLE GitHub
+# GraphQL fetch, so the two cards can never disagree with each other. There
+# used to be a second, third-party-action-based workflow generating
+# activity-graph.svg on the same schedule (activity-graph.yml) — it raced
+# this one on every run and has been removed. This is now the one and only
+# workflow that touches either file.
+#
+# This workflow and update-cyberdaily.yml both publish to the `output`
+# branch, so they share the `output-branch-publish` concurrency group below
+# instead of relying on "surgical commits" to avoid collisions. Two jobs
+# cannot safely check out the same branch, edit disjoint files, and push
+# independently without one of them racing the other's push — sharing a
+# concurrency group makes GitHub Actions queue them instead of running them
+# in parallel.
 
 on:
   schedule:
@@ -17,7 +25,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: output-branch-dashboard
+  group: output-branch-publish
   cancel-in-progress: false
 
 jobs:
@@ -25,11 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      STATS_TOKEN_SET: ${{ secrets.STATS_TOKEN != '' }}
 
     steps:
-      - name: Checkout main (for scripts)
+      - name: Checkout main (scripts)
         uses: actions/checkout@v6
         with:
           path: main
@@ -40,41 +46,65 @@ jobs:
           ref: output
           path: output
 
-      - name: Generate contribution activity graph
-        uses: maurodesouza/github-readme-activity-graph-action@v1
-        with:
-          username: rithinkrishnakv
-          options: theme=react-dark&bg_color=0D1B2A&color=00D9FF&line=00D9FF&point=ffffff&area=true&hide_border=true
-          output_path: output/activity-graph.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Set up Python
-        if: ${{ env.STATS_TOKEN_SET == 'true' }}
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Generate stats dashboard
-        # Skips cleanly (no red X) until STATS_TOKEN is added as a repo
-        # secret — see README > Manual setup. continue-on-error is a second
-        # safety net so a transient API hiccup never blocks the activity
-        # graph from publishing.
-        if: ${{ env.STATS_TOKEN_SET == 'true' }}
-        continue-on-error: true
+      - name: Diagnostics — before generation
+        run: |
+          echo "main branch:   ${{ github.ref_name }} @ $(git -C main rev-parse HEAD)"
+          echo "output branch: output @ $(git -C output rev-parse HEAD)"
+          echo "STATS_TOKEN secret configured: ${{ secrets.STATS_TOKEN != '' }}"
+          echo "(if false, the script falls back to the default GITHUB_TOKEN — that's expected, not an error)"
+
+      - name: Generate stats + activity graph
+        # Deliberately no `continue-on-error` and no "skip if secret
+        # missing" gate here — see the module docstring in generate_stats.py.
+        # STATS_TOKEN is optional (the script falls back to the ambient
+        # GITHUB_TOKEN, which is sufficient scope for public contribution
+        # and language data). A failed run must show up as a red X in
+        # Actions, never as a silently stale stats.svg/activity-graph.svg.
         env:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STATS_USERNAME: rithinkrishnakv
-        run: python3 main/scripts/generate_stats.py output/stats.svg
+        run: |
+          python3 main/scripts/generate_stats.py \
+            --stats-out output/stats.svg \
+            --activity-out output/activity-graph.svg
+
+      - name: Validate generated SVGs
+        run: |
+          set -e
+          for FILE in output/stats.svg output/activity-graph.svg; do
+            if [ ! -f "$FILE" ]; then
+              echo "::error::$FILE was not created"
+              exit 1
+            fi
+            SIZE=$(wc -c < "$FILE")
+            if [ "$SIZE" -lt 200 ]; then
+              echo "::error::$FILE is too small ($SIZE bytes)"
+              exit 1
+            fi
+            if ! head -c 200 "$FILE" | grep -qE '<svg|<\?xml'; then
+              echo "::error::$FILE does not look like valid SVG/XML"
+              exit 1
+            fi
+            echo "OK: $FILE ($SIZE bytes)"
+          done
 
       - name: Publish changed files to output branch
         working-directory: output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          BEFORE_SHA=$(git rev-parse HEAD)
+          git add stats.svg activity-graph.svg
           if git diff --cached --quiet; then
-            echo "Nothing changed — skipping commit."
+            echo "Nothing changed — skipping commit (before/after SHA both $BEFORE_SHA)."
           else
             git commit -m "chore: update dashboard $(date -u +%F)"
             git push
+            echo "output branch: $BEFORE_SHA -> $(git rev-parse HEAD)"
           fi

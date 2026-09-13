@@ -9,10 +9,12 @@ name: Update Cyber Daily Brief
 #   - cyberdaily.svg                -> committed to the `output` branch
 #   - archive/cyberdaily.jsonl      -> committed to `main` (rolling log)
 #
-# Publishing to `output` is a surgical git commit against a checkout of
-# just that branch (not a mirror deploy) so this workflow and
-# update-dashboard.yml — which also writes to `output` — never stomp on
-# each other's files.
+# This workflow and update-dashboard.yml both publish to the `output`
+# branch, so they share the `output-branch-publish` concurrency group below
+# rather than relying on "surgical commits" to avoid collisions — two jobs
+# checking out the same branch and pushing independently can race each
+# other's push no matter how disjoint their file changes are. Sharing a
+# concurrency group makes GitHub Actions queue them instead of racing.
 
 on:
   schedule:
@@ -20,7 +22,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: output-branch-cyberdaily
+  group: output-branch-publish
   cancel-in-progress: false
 
 jobs:
@@ -45,6 +47,11 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: Diagnostics — before generation
+        run: |
+          echo "main branch:   ${{ github.ref_name }} @ $(git -C main rev-parse HEAD)"
+          echo "output branch: output @ $(git -C output rev-parse HEAD)"
 
       - name: Generate Cyber Daily brief
         env:
@@ -79,12 +86,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BEFORE_SHA=$(git rev-parse HEAD)
           git add cyberdaily.svg
           if git diff --cached --quiet; then
-            echo "Nothing changed — skipping commit."
+            echo "Nothing changed — skipping commit (before/after SHA both $BEFORE_SHA)."
           else
             git commit -m "chore: cyber daily brief $(date -u +%F)"
             git push
+            echo "output branch: $BEFORE_SHA -> $(git rev-parse HEAD)"
           fi
 
       - name: Commit archive to main branch
@@ -92,10 +101,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BEFORE_SHA=$(git rev-parse HEAD)
           git add archive/cyberdaily.jsonl
           if git diff --cached --quiet; then
-            echo "Nothing changed — skipping commit."
+            echo "Nothing changed — skipping commit (before/after SHA both $BEFORE_SHA)."
           else
             git commit -m "chore: archive cyber daily brief $(date -u +%F)"
             git push
+            echo "main branch: $BEFORE_SHA -> $(git rev-parse HEAD)"
           fi
