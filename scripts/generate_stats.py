@@ -19,7 +19,9 @@ request for the contribution calendar + repository languages, and renders
 of this profile:
 
   - stats.svg           total contributions / streaks / top languages
-  - activity-graph.svg  a 52-week contribution activity line+area chart
+  - activity-graph.svg  a trailing contribution activity line+area chart
+                        (~12 months, exactly however many weeks GitHub's
+                        contributionCalendar returns — never hardcoded)
 
 Both are committed to the repo's `output` branch by a GitHub Action on a
 schedule (see .github/workflows/update-dashboard.yml).
@@ -375,7 +377,7 @@ def render_activity_svg(
     plot_top, plot_bottom = 70.0, 178.0  # y grows downward; bottom == zero line
 
     n = len(weeks)
-    chrome = _terminal_chrome("rimu@kali: ~/contrib-graph --weeks 52", width, height)
+    chrome = _terminal_chrome("rimu@kali: ~/contrib-graph --last-year", width, height)
 
     if n == 0:
         # No data at all — still return a valid, honestly-empty card rather
