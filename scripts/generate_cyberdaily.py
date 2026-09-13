@@ -257,7 +257,9 @@ def fetch_tool(token: str | None, used: set[str] | None = None) -> dict | None:
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    today = datetime.date.today()
+    # UTC, not local time: keeps "recent" windows consistent regardless of
+    # which timezone this ever happens to run in.
+    today = datetime.datetime.now(datetime.timezone.utc).date()
     fallback_queries = [
         f"topic:security-tools created:>{today - datetime.timedelta(days=30)}",
         f"topic:pentesting created:>{today - datetime.timedelta(days=30)}",
@@ -416,7 +418,9 @@ def main() -> None:
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    today = datetime.date.today()
+    # UTC, not local time: the archive's date_str and the "already covered
+    # recently" windows below must not depend on the runner's local clock.
+    today = datetime.datetime.now(datetime.timezone.utc).date()
     date_str = today.isoformat()
 
     archive = load_archive(args.archive)
