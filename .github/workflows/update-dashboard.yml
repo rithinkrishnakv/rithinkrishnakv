@@ -31,14 +31,32 @@ concurrency:
   # because update-cyberdaily.yml's run, using this same group, also
   # commits to `main` (the archive) later in its job; that main-branch
   # commit is covered by this same lock, not left to race separately.
-  # cancel-in-progress: false means a second run QUEUES behind the first
-  # instead of canceling it, so nothing gets silently dropped.
+  #
+  # cancel-in-progress: false stops a second run from KILLING the one
+  # currently in progress. On its own that is NOT enough: GitHub's
+  # historical default only keeps one PENDING run per group — if a
+  # third run shows up while a second is still waiting, that second
+  # (still-pending, never-started) run is silently canceled and replaced
+  # by the third, with no error and no red X. `queue: max` turns that
+  # single pending slot into an ordered queue (up to 100 waiting runs)
+  # so every triggered run either starts or is still waiting — never
+  # silently dropped before it gets a chance to run. queue: max requires
+  # cancel-in-progress: false (they describe conflicting behaviors for
+  # in-progress runs, so GitHub rejects the two together).
   #
   # Any future workflow that pushes to `output` OR to `main` in this repo
   # must join this same group, or it reintroduces exactly the race this
   # was added to close.
   group: profile-automation-publish
   cancel-in-progress: false
+  queue: max
+  # NOTE: as of actionlint v1.7.12 (2026-03-30), actionlint's schema
+  # predates GitHub's 2026-05-07 rollout of `queue: max` and will flag it
+  # as an "unexpected key". That is a stale-linter false positive, not a
+  # workflow bug — see https://docs.github.com/actions/using-jobs/using-concurrency
+  # and https://github.blog/changelog/2026-05-07-github-actions-concurrency-groups-now-allow-larger-queues/
+  # Re-check when actionlint releases a version newer than 1.7.12 and
+  # remove this note once it recognizes the key.
 
 jobs:
   build:
