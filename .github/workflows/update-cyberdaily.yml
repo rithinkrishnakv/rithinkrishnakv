@@ -135,9 +135,27 @@ jobs:
 
       - name: Commit archive to main branch
         working-directory: main
+        # This step's commit author/committer is deliberately the human
+        # maintainer's own GitHub-associated noreply address, not
+        # github-actions[bot] — unlike the output-branch step above.
+        # archive/cyberdaily.jsonl is real repository content on the
+        # default branch (main), and this step only ever commits when
+        # git diff --cached is non-empty (see below): there is no
+        # schedule-driven or empty commit here, only a commit when this
+        # run genuinely changed the archive. That combination — real
+        # content change, on the default branch, correctly attributed —
+        # is what makes it fair for this to show up as the maintainer's
+        # own contribution activity, rather than the bot's.
+        #
+        # output branch commits (previous step) stay attributed to
+        # github-actions[bot] on purpose: `output` isn't the default
+        # branch, isn't eligible to count as contribution activity
+        # either way, and keeping generated-artifact commits clearly
+        # bot-authored avoids any appearance of conflating "an SVG got
+        # regenerated" with "the maintainer did something."
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Rithin Krishna K V"
+          git config user.email "261096925+rithinkrishnakv@users.noreply.github.com"
           BEFORE_SHA=$(git rev-parse HEAD)
           git add archive/cyberdaily.jsonl
           if git diff --cached --quiet; then
