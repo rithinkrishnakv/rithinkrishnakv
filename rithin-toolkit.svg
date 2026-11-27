@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 694 192" width="694" height="192" role="img" aria-label="Languages, technologies and security toolkit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 694 240" width="694" height="240" role="img" aria-label="Languages, technologies and security toolkit">
 <defs>
 <style type="text/css"><![CDATA[
 text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
@@ -13,8 +13,8 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 </defs>
 
 <text x="40" y="24" font-size="12" letter-spacing="2" fill="#5b6b84">LANGUAGES &amp; TECHNOLOGIES</text>
-<text x="40" y="108" font-size="12" letter-spacing="2" fill="#5b6b84">SECURITY TOOLKIT</text>
-<rect x="0" y="0" width="694" height="192" rx="0" fill="none"/>
+<text x="40" y="156" font-size="12" letter-spacing="2" fill="#5b6b84">SECURITY TOOLKIT</text>
+<rect x="0" y="0" width="694" height="240" rx="0" fill="none"/>
 
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 0.00s forwards">
 <rect x="40.0" y="54" width="86.8" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
@@ -47,28 +47,43 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <text x="549.6" y="75.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Git</text>
 </g>
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 0.90s forwards">
-<rect x="40.0" y="138" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
-<g transform="translate(53.0,148.0)"><path d="M1 2 L6 7 L1 12" stroke="#00d9ff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12 H13" stroke="#00d9ff" stroke-width="1.6" stroke-linecap="round"/></g>
-<text x="76.0" y="159.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Kali Linux</text>
+<rect x="40.0" y="102" width="64" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(53.0,112.0)"><path d="M5 1.5 L0.8 7 L5 12.5 M9 1.5 L13.2 7 L9 12.5" stroke="#00d9ff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="76.0" y="123.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Go</text>
 </g>
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.05s forwards">
-<rect x="175.5" y="138" width="117.0" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
-<g transform="translate(188.5,148.0)"><path class="wave7" d="M0.5 7.5 H2.8 L4.2 3.5 L6.2 11.5 L8.2 5.5 L9.7 7.5 H13.5" fill="none" stroke="#00d9ff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="211.5" y="159.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Wireshark</text>
+<rect x="115.0" y="102" width="79.2" height="34" rx="9" fill="#0d1424" stroke="#a78bfa" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(128.0,112.0)"><path d="M5 1.5 L0.8 7 L5 12.5 M9 1.5 L13.2 7 L9 12.5" stroke="#a78bfa" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="151.0" y="123.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Rust</text>
 </g>
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.20s forwards">
-<rect x="303.4" y="138" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#a78bfa" stroke-width="1.1" opacity=".9"/>
-<g transform="translate(316.4,148.0)"><circle cx="7" cy="7" r="4.8" fill="none" stroke="#a78bfa" stroke-width="1.1"/><circle cx="7" cy="7" r="1.3" fill="#a78bfa"/><path d="M7 0.7 V2.9 M7 11.1 V13.3 M0.7 7 H2.9 M11.1 7 H13.3" stroke="#a78bfa" stroke-width="1.1" stroke-linecap="round"/></g>
-<text x="339.4" y="159.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Metasploit</text>
+<rect x="205.2" y="102" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(218.2,112.0)"><path d="M5 1.5 L0.8 7 L5 12.5 M9 1.5 L13.2 7 L9 12.5" stroke="#00d9ff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="241.2" y="123.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">TypeScript</text>
 </g>
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.35s forwards">
-<rect x="438.9" y="138" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
-<g transform="translate(451.9,148.0)"><circle cx="7" cy="7" r="4.8" fill="none" stroke="#00d9ff" stroke-width="1.1"/><circle cx="7" cy="7" r="1.3" fill="#00d9ff"/><path d="M7 0.7 V2.9 M7 11.1 V13.3 M0.7 7 H2.9 M11.1 7 H13.3" stroke="#00d9ff" stroke-width="1.1" stroke-linecap="round"/></g>
-<text x="474.9" y="159.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Burp Suite</text>
+<rect x="40.0" y="186" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(53.0,196.0)"><path d="M1 2 L6 7 L1 12" stroke="#00d9ff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12 H13" stroke="#00d9ff" stroke-width="1.6" stroke-linecap="round"/></g>
+<text x="76.0" y="207.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Kali Linux</text>
 </g>
 <g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.50s forwards">
-<rect x="574.5" y="138" width="79.2" height="34" rx="9" fill="#0d1424" stroke="#a78bfa" stroke-width="1.1" opacity=".9"/>
-<g transform="translate(587.5,148.0)"><circle cx="7" cy="7" r="5.3" fill="none" stroke="#a78bfa" stroke-width="1" opacity=".45"/><circle cx="7" cy="7" r="3.2" fill="none" stroke="#a78bfa" stroke-width=".8" opacity=".3"/><g class="radar10" style="transform-origin:7px 7px"><path d="M7 7 L7 1.7 A5.3 5.3 0 0 1 11.6 4.35 Z" fill="#a78bfa" opacity=".4"/></g><circle cx="7" cy="7" r="1" fill="#a78bfa"/></g>
-<text x="610.5" y="159.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Nmap</text>
+<rect x="175.5" y="186" width="117.0" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(188.5,196.0)"><path class="wave7" d="M0.5 7.5 H2.8 L4.2 3.5 L6.2 11.5 L8.2 5.5 L9.7 7.5 H13.5" fill="none" stroke="#00d9ff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="211.5" y="207.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Wireshark</text>
+</g>
+<g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.65s forwards">
+<rect x="303.4" y="186" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#a78bfa" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(316.4,196.0)"><circle cx="7" cy="7" r="4.8" fill="none" stroke="#a78bfa" stroke-width="1.1"/><circle cx="7" cy="7" r="1.3" fill="#a78bfa"/><path d="M7 0.7 V2.9 M7 11.1 V13.3 M0.7 7 H2.9 M11.1 7 H13.3" stroke="#a78bfa" stroke-width="1.1" stroke-linecap="round"/></g>
+<text x="339.4" y="207.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Metasploit</text>
+</g>
+<g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.80s forwards">
+<rect x="438.9" y="186" width="124.5" height="34" rx="9" fill="#0d1424" stroke="#00d9ff" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(451.9,196.0)"><circle cx="7" cy="7" r="4.8" fill="none" stroke="#00d9ff" stroke-width="1.1"/><circle cx="7" cy="7" r="1.3" fill="#00d9ff"/><path d="M7 0.7 V2.9 M7 11.1 V13.3 M0.7 7 H2.9 M11.1 7 H13.3" stroke="#00d9ff" stroke-width="1.1" stroke-linecap="round"/></g>
+<text x="474.9" y="207.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Burp Suite</text>
+</g>
+<g opacity="0" style="animation:chipIn .55s cubic-bezier(.2,.8,.3,1) 1.95s forwards">
+<rect x="574.5" y="186" width="79.2" height="34" rx="9" fill="#0d1424" stroke="#a78bfa" stroke-width="1.1" opacity=".9"/>
+<g transform="translate(587.5,196.0)"><circle cx="7" cy="7" r="5.3" fill="none" stroke="#a78bfa" stroke-width="1" opacity=".45"/><circle cx="7" cy="7" r="3.2" fill="none" stroke="#a78bfa" stroke-width=".8" opacity=".3"/><g class="radar10" style="transform-origin:7px 7px"><path d="M7 7 L7 1.7 A5.3 5.3 0 0 1 11.6 4.35 Z" fill="#a78bfa" opacity=".4"/></g><circle cx="7" cy="7" r="1" fill="#a78bfa"/></g>
+<text x="610.5" y="207.3" font-size="12.5" fill="#dbe7f2" letter-spacing=".2">Nmap</text>
 </g>
 </svg>

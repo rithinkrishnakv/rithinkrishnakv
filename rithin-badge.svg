@@ -117,7 +117,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
   <text x="200" y="538" text-anchor="middle" font-size="17" font-weight="700" fill="#e8edf5" letter-spacing="1">RITHIN KRISHNA K.V.</text>
   <text x="200" y="556" text-anchor="middle" font-size="12" fill="url(#violetGrad)" letter-spacing="3">RIMU</text>
-  <text x="200" y="574" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">CYBER SECURITY ENTHUSIAST</text>
+  <text x="200" y="574" text-anchor="middle" font-size="9.5" fill="#5b6b84" letter-spacing="1.3">SECURITY RESEARCHER</text>
 
   <rect x="94" y="588" width="212" height="1" fill="#1b2f47"/>
 
@@ -131,7 +131,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
     <g stroke="#e8edf5" stroke-width="1.4" stroke-linecap="round">
       <path d="M94.5 622.5 L103.5 631.5 M103.5 622.5 L94.5 631.5"/>
     </g>
-    <text x="112" y="631">x.com/RithinSec</text>
+    <text x="112" y="631">x.com/R1thin</text>
 
     <text x="94" y="649" fill="#00d9ff">&gt;_</text>
     <text x="112" y="649">github.com/rithinkrishnakv</text>

@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated banner (local SVG — no external render service, so it never breaks/rate-limits) -->
-<img src="./rithin-banner.svg" alt="Rithin Krishna (Rimu) — Cyber Security Enthusiast" width="100%"/>
+<img src="./rithin-banner.svg" alt="Rithin Krishna (Rimu) — Security Researcher" width="100%"/>
 
 <br/>
 
@@ -89,6 +89,20 @@
 
 ---
 
+## `$ cat hall_of_fame.txt`
+
+<div align="center">
+
+<img src="./rithin-achievements.svg" alt="Recognition and hall of fame" width="640"/>
+
+<br/>
+
+<sub>Advisories: <a href="https://github.com/advisories/GHSA-j3x4-864r-x7q6">gguf-parser-go</a> · <a href="https://github.com/advisories/GHSA-8pp7-j5x6-h8qc">gltf</a> · <a href="https://github.com/advisories/GHSA-hr2w-xm36-76gp">netpbm</a></sub>
+
+</div>
+
+---
+
 ## `$ git log --stat`
 
 <div align="center">
@@ -121,6 +135,8 @@
 <div align="center">
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-00D9FF.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://rithinkrishnakv.vercel.app/)
+[![HackerOne](https://img.shields.io/badge/HackerOne-%23494949.svg?style=for-the-badge&logo=hackerone&logoColor=white)](https://hackerone.com/rem-)
+[![Bugcrowd](https://img.shields.io/badge/Bugcrowd-%23F26868.svg?style=for-the-badge&logo=bugcrowd&logoColor=white)](https://bugcrowd.com/Rithinkrishna)
 [![X](https://img.shields.io/badge/X-000000.svg?style=for-the-badge&logo=x&logoColor=white)](https://x.com/R1thin)
 [![Medium](https://img.shields.io/badge/Medium-%23000000.svg?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@rithinkrishnakv)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rithin-krishna-k-v-15593b381/)

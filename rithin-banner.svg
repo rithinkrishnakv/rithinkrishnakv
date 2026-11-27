@@ -136,7 +136,7 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 
 <g opacity="0" style="animation:fadeIn .7s ease 3.3s forwards">
 <text x="56" y="244" font-size="13" fill="#5b6b84">📍 Kerala, IN</text>
-<text x="168" y="244" font-size="13" fill="#3d5872">status: 💀 idk what am doing</text>
+<text x="168" y="244" font-size="13" fill="#3d5872">status: hunting vulnerabilities</text>
 </g>
 
 <g opacity="0" style="animation:fadeIn .7s ease 3.7s forwards" font-size="13">
@@ -146,9 +146,9 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 </g>
 <text x="74" y="273" fill="#7dd3fc">rithinkrishnakv.vercel.app</text>
 <g stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round">
-<path d="M270 265.5 L280 275.5 M280 265.5 L270 275.5"/>
+<path d="M286 265.5 L296 275.5 M296 265.5 L286 275.5"/>
 </g>
-<text x="288" y="273" fill="#a78bfa">x.com/RithinSec</text>
+<text x="304" y="273" fill="#a78bfa">x.com/R1thin</text>
 </g>
 
 

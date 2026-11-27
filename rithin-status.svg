@@ -18,10 +18,10 @@ text{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
 <stop offset="0%" stop-color="#00d9ff"><animate attributeName="stop-color" values="#00d9ff;#a78bfa;#00d9ff" dur="10s" repeatCount="indefinite"/></stop>
 <stop offset="100%" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#00d9ff;#a78bfa" dur="10s" repeatCount="indefinite"/></stop>
 </linearGradient>
-<clipPath id="l0"><rect x="44" y="50" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".2s" fill="freeze"/></rect></clipPath>
-<clipPath id="l1"><rect x="44" y="74" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".55s" fill="freeze"/></rect></clipPath>
-<clipPath id="l2"><rect x="44" y="98" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin=".90s" fill="freeze"/></rect></clipPath>
-<clipPath id="l3"><rect x="44" y="122" width="0" height="18"><animate attributeName="width" from="0" to="330" dur=".4s" begin="1.25s" fill="freeze"/></rect></clipPath>
+<clipPath id="l0"><rect x="44" y="50" width="0" height="18"><animate attributeName="width" from="0" to="440" dur=".4s" begin=".2s" fill="freeze"/></rect></clipPath>
+<clipPath id="l1"><rect x="44" y="74" width="0" height="18"><animate attributeName="width" from="0" to="440" dur=".4s" begin=".55s" fill="freeze"/></rect></clipPath>
+<clipPath id="l2"><rect x="44" y="98" width="0" height="18"><animate attributeName="width" from="0" to="440" dur=".4s" begin=".90s" fill="freeze"/></rect></clipPath>
+<clipPath id="l3"><rect x="44" y="122" width="0" height="18"><animate attributeName="width" from="0" to="440" dur=".4s" begin="1.25s" fill="freeze"/></rect></clipPath>
 </defs>
 
 <rect width="700" height="240" rx="16" fill="url(#bg)"/>

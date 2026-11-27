@@ -91,6 +91,14 @@ def load_archive(path: str) -> list[dict]:
     return records
 
 
+def _cve_year(cve_id: str) -> int:
+    """Year embedded in a CVE id (CVE-YYYY-NNNN), or 0 when unparseable."""
+    parts = cve_id.split("-")
+    if len(parts) >= 3 and parts[1].isdigit():
+        return int(parts[1])
+    return 0
+
+
 def _parse_date(s: str) -> datetime.date | None:
     try:
         return datetime.date.fromisoformat(s[:10])
@@ -163,11 +171,17 @@ def fetch_cves(used_ids: set[str] | None = None) -> list[dict]:
             item = to_item(v)
             if item and item["id"] not in used_ids:
                 fresh.append(item)
-                if len(fresh) >= MAX_CVES:
+                if len(fresh) >= 40:
                     break
 
         if len(fresh) >= MAX_CVES:
-            return fresh
+            # KEV is sorted by dateAdded, but CISA often adds years-old
+            # CVEs to the catalogue — prefer current/recent-year CVEs so
+            # the card does not headline stale vulnerabilities. The sort
+            # is stable, so dateAdded order survives within each group.
+            this_year = datetime.date.today().year
+            fresh.sort(key=lambda c: 0 if _cve_year(c["id"]) >= this_year - 1 else 1)
+            return fresh[:MAX_CVES]
 
         seen = {c["id"] for c in fresh}
         for v in vulns:
